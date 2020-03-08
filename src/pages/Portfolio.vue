@@ -13,7 +13,8 @@
             </figure>
 
             <ProjectCard 
-              :name="edge.node.name" 
+              :name="edge.node.name"
+              :description="edge.node.description"
               :date_from="edge.node.date_from"
               :date_end="edge.node.date_end"
               v-for="edge in $page.projects.edges" 
@@ -38,6 +39,7 @@
           id,
           category_id,
           name,
+          description,
           date_from,
           date_end
         }

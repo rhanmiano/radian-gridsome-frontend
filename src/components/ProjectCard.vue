@@ -1,22 +1,45 @@
 <template>
   <div class="project-wrapper">
-    <div class="w-full h-16 bg-white flex rounded shadow-xs mb-2">
-      <div class="flex-none self-center rounded-full w-10 h-10 bg-layout-b1 m-4"></div>
-      <div class="flex-grow self-center">
-        <strong class="decor text-sm font-glegoo-bold leading-none m-0">{{name}}</strong> <br>
-        <span class="text-xs text-layout-w2">Personal | {{date_from}} - {{date_end}} </span>
+    <g-link title="View Project" to="/">
+      <div class="w-full h-16 bg-white hover:bg-gray-200 flex rounded shadow-xs mb-2">
+        <div class="flex flex-none self-center rounded-full w-10 h-10 bg-brand-n2 m-4">
+          <unicon class="mx-auto self-center" name="monitor-heart-rate" :fill="$static.metadata.brandColors.layoutW1"></unicon>
+        </div>
+        <div class="flex-grow self-center leading-none font-glegoo">
+          <strong class="project-title text-sm font-bold">{{name}}</strong> <br>
+          <span class="text-xs text-layout-w2">Personal | {{new Date(date_from) | dateFormat('MMM YYYY')}} - {{new Date(date_end) | dateFormat('MMM YYYY')}} </span>
+        </div>
+        <div class="hidden sm:flex sm:w-2/4  flex-grow self-center">
+          <span class="text-xs text-layout-b1 leading-none">{{description}}</span>
+        </div>
+        
+        
+        <div class="flex flex-none self-center mr-4">
+          <a href="#" target="_blank" rel="noopener noreferrer" title="Project Demo">
+            <unicon class="self-center ml-1" name="comment-image" :fill="$static.metadata.brandColors.brand"></unicon>
+          </a>
+        </div>
       </div>
-      <div class="flex flex-none self-center mr-4">
-        <unicon class="self-center ml-1" name="arrow-right" fill="gray"></unicon>
-      </div>
-    </div>
+    </g-link>
   </div>
 </template>
+
+<static-query>
+query {
+  metadata {
+    brandColors {
+      brand,
+      layoutW1,
+      layoutB2
+    }
+  }
+}
+</static-query>
 
 <script>
 export default {
     name: 'ProjectCard',
-    props: ['name', 'date_from', 'date_end']
+    props: ['name', 'description', 'date_from', 'date_end']
 }
 </script>
 

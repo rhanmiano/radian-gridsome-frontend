@@ -21,6 +21,7 @@ module.exports = function (api) {
         id: item.id,
         category_id: item.category_id,
         name: item.name,
+        description: item.description,
         img_url: item.img_url,
         project_url: item.project_url,
         hearts: item.hearts,
