@@ -1,0 +1,77 @@
+@tailwind base;
+
+@import "./base/normalize";
+@import "./base/reset";
+@import "./base/fonts";
+
+// Liquid Typeset
+$base-size: 14;
+$max-size: 20;
+
+$from: 321;
+$to: 992;
+
+$font-base-size: 16px;
+$font-max-size: 20px;
+
+// HTML base
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font: normal normal 300 #{$font-base-size} / 1.618em theme('fontFamily.avenir');
+}
+
+// Body base
+body {
+    color: theme('colors.layout-b2');
+    background: theme('colors.layout-w1');
+    font-size: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 1.5rem 0;
+    font-family: theme('fontFamily.glegoo');
+    &:not(:first-child) {
+        margin: 1.5rem 0;
+    }
+
+    &.decor::after {
+        content: "";
+        left: 0;
+        display: block;
+        border-radius: 5px;
+        background-color: #0E7971;
+        z-index: 1;
+    }
+}
+
+h1.decor {
+    &::after {
+        width: 80px;
+        padding: 3px 0;
+        margin-top: 15px;
+    }
+}
+
+h2,h3,h4 {
+    &.decor::after {
+        width: 50px;
+        padding: 2px 0;
+        margin-top: 8px;
+    }
+}
+
+@media (min-width: 992px) {
+    html, body {
+        font-size: calc(#{$base-size}px + (#{$max-size} - #{$base-size}) * ((100vw - #{$from}px) / (#{$to} - #{$from})));
+    }
+}
+
+@media (min-width: 1024px) {
+    body, html {
+        font-size: #{$font-max-size};
+    }
+}
+
+@tailwind components;
+@tailwind utilities;

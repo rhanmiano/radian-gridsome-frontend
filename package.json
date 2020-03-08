@@ -1,0 +1,21 @@
+{
+  "name": "radian-gridsome-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "gridsome build",
+    "develop": "gridsome develop",
+    "explore": "gridsome explore"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "gridsome": "^0.7.0",
+    "tailwindcss": "^1.2.0",
+    "vue-unicons": "^2.0.3"
+  },
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^2.1.0",
+    "node-sass": "^4.13.1",
+    "sass-loader": "^8.0.2"
+  }
+}
