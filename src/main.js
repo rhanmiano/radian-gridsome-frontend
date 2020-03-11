@@ -12,7 +12,8 @@ import {
   uniGithubAlt, 
   uniFileDownloadAlt, 
   uniCommentImage,
-  uniMonitorHeartRate  } from 'vue-unicons/src/icons'
+  uniMonitorHeartRate,
+  uniRedo  } from 'vue-unicons/src/icons'
 
 Unicon.add([
   uniArrowRight, 
@@ -20,7 +21,8 @@ Unicon.add([
   uniGithubAlt,
   uniFileDownloadAlt,
   uniCommentImage,
-  uniMonitorHeartRate
+  uniMonitorHeartRate,
+  uniRedo
 ])
 
 export default function (Vue, { router, head, isClient }) {

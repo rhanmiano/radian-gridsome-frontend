@@ -14,10 +14,10 @@ const postcssPlugins = [
 /*if (process.env.NODE_ENV === 'production') postcssPlugins.push(purgecss(require('./purgecss.config.js')))*/
 
 module.exports = {
+  siteName: 'Rhan Miano',
+  siteUrl: 'https://rhanmiano.me',
+  siteDescription: 'An experienced Web Developer from Taguig, PH',
   metadata: {
-    siteName: 'Rhan Miano',
-    siteUrl: 'https://rhanmiano.me',
-    siteDescription: 'An experienced Web Developer from Taguig, PH',
     brandColors: {
       'brandP2': '#18D3C5',
       'brandP1': '#14BBAF',
