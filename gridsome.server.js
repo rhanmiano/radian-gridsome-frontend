@@ -37,7 +37,33 @@ module.exports = function (api) {
     }
   })
 
-  api.createPages(({ createPage }) => {
+  api.createPages(async ({ graphql, createPage }) => {
     // Use the Pages API here: https://gridsome.org/docs/pages-api/
+    const { data } = await graphql(`{
+      projects: allProjects(filter: {
+        is_shown: {eq: 1}, 
+        is_deleted:{eq: 0}
+      }) { 
+        edges {
+          node {
+            id,
+            name,
+            description
+          }
+        }
+      }
+    }`)
+
+    data.projects.edges.forEach(({ node }) => {
+      createPage({
+        path: `/portfolio/${node.id}`,
+        component: './src/templates/ProjectDescription.vue',
+        context: {
+          id: node.id,
+          name: node.name,
+          description: node.description
+        }
+      })
+    })
   })
 }

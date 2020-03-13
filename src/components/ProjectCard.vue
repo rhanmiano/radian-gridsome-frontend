@@ -1,6 +1,6 @@
 <template>
   <div class="project-wrapper">
-    <g-link title="View Project" to="/">
+    <g-link title="View Project" :to="`/portfolio/${slug}`">
       <div class="w-full h-16 bg-white hover:bg-gray-200 flex rounded shadow-xs mb-2">
         <div class="flex flex-none self-center rounded-full w-10 h-10 bg-brand-n2 m-4">
           <unicon class="mx-auto self-center" name="monitor-heart-rate" :fill="$static.metadata.brandColors.layoutW1"></unicon>
@@ -39,7 +39,7 @@ query {
 <script>
 export default {
     name: 'ProjectCard',
-    props: ['name', 'description', 'date_from', 'date_end']
+    props: ['slug', 'name', 'description', 'date_from', 'date_end']
 }
 </script>
 

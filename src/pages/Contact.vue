@@ -69,7 +69,7 @@
                   <input class="w-full px-4 py-3 border rounded" type="text" placeholder="Email" v-model="form.email">
                 </div>
                 <div class="inline-block w-2/4 pl-3">
-                  <input class="w-full px-4 py-3 border rounded" type="text" placeholder="Contact No" v-model="form.contact_no">
+                  <input class="w-full px-4 py-3 border rounded" type="text" placeholder="Contact No" v-model="form.contactNo">
                 </div>
               </div>
 
@@ -120,7 +120,7 @@ const initialFormState = {
   ],
   nickname: "",
   email: "",
-  contact_no: "",
+  contactNo: "",
   message: ""
 }
 
@@ -138,10 +138,9 @@ export default {
   },
   methods: {
     reset() {
-      console.log('here')
       this.form.selectedType = 0;
 
-      this.form.nickname = this.form.email = this.form.contact_no = this.form.message = ""
+      this.form.nickname = this.form.email = this.form.contactNo = this.form.message = ""
     }
   },
   metaInfo: {

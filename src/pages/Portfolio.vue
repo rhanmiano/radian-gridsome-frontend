@@ -5,7 +5,7 @@
         <div class="container h-full w-full pt-16">
           <div class="w-full px-8 md:pl-24">
             <div class="w-full lg:w-8/12">
-              <h1 class="decor text-layout-b2 mt-0">Porfolio</h1>
+              <h1 class="decor text-layout-b2 mt-0">Portfolio</h1>
               
               <p class="text-xl text-layout-b1">Selected personal and commissioned projects.</p>
 
@@ -14,12 +14,14 @@
               </figure>
 
               <ProjectCard 
+                v-for="edge in $page.projects.edges" 
+                :key="edge.node.id"
+                :slug="edge.node.id"
                 :name="edge.node.name"
                 :description="edge.node.description"
                 :date_from="edge.node.date_from"
                 :date_end="edge.node.date_end"
-                v-for="edge in $page.projects.edges" 
-                :key="edge.node.id">
+              >
               </ProjectCard>
             </div>
             <div class="w-full lg:w-4/12">
