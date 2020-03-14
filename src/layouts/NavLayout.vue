@@ -1,10 +1,14 @@
 <template>
-  <div class="relative">
-    <header class="absolute w-full bg-transparent p-5">
-      <nav class="font-glegoo" :class="linkColor">
-        <g-link class="flex content-center float-right" :to="linksTo">
-          <span class="text-right"> {{linkText}} </span> 
-          <unicon class="ml-1" name="arrow-right" :fill="iconColor"></unicon>
+  <div class="md:h-screen overflow-y-auto">
+    <header class="w-full bg-transparent p-5 text-xs">
+      <nav class="font-glegoo" :class="navInfo.linkColor">
+        <g-link v-if="navInfo.prev.hasPrev" class="flex content-baseline float-left md:ml-16" :to="navInfo.prev.linksTo">
+          <unicon class="mr-1 self-center" name="arrow-left" :fill="navInfo.iconColor"></unicon>
+          <span class="text-right"> {{navInfo.prev.linkText}} </span> 
+        </g-link>
+        <g-link v-if="navInfo.next.hasNext" class="flex content-baseline float-right" :to="navInfo.next.linksTo">
+          <span class="text-right"> {{navInfo.next.linkText}} </span> 
+          <unicon class="ml-1 self-center" name="arrow-right" :fill="navInfo.iconColor"></unicon>
         </g-link>
       </nav>
     </header>
@@ -15,7 +19,7 @@
 <script>
 export default {
   name: 'NavLayout',
-  props: ['linksTo', 'linkText', 'linkColor', 'iconColor', 'isHome'],
+  props: ['navInfo'],
   data() {
     return {
       today: new Date().getFullYear()

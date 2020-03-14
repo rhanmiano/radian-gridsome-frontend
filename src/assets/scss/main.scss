@@ -5,7 +5,7 @@
 @import "./base/fonts";
 
 // Liquid Typeset
-$base-size: 14;
+$base-size: 16;
 $max-size: 20;
 
 $from: 321;
@@ -58,6 +58,16 @@ h2,h3,h4 {
         width: 50px;
         padding: 2px 0;
         margin-top: 8px;
+    }
+}
+
+.external-link {
+    @apply text-brand;
+    text-decoration: underline;
+    @apply transition;
+    @apply duration-500;
+    &:hover {
+        @apply text-brand-n2;
     }
 }
 

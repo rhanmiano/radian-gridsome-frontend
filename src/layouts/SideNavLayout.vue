@@ -9,13 +9,13 @@
             </g-link>
 
             <div class="flex md:w-full md:block">
-              <a title="View CV" class="flex self-center rounded-full w-8 h-8 transition duration-300 ease-out bg-transparent hover:bg-brand-n2 md:mx-auto mr-2 md:mb-2 opacity-50 hover:opacity-100" href="#" rel="noopener noreferrer" target="_blank">
+              <a title="Download CV" class="flex self-center rounded-full w-8 h-8 transition duration-300 ease-out bg-transparent hover:bg-brand-n2 md:mx-auto mr-2 md:mb-2 opacity-50 hover:opacity-100" href="#" rel="noopener noreferrer" target="_blank">
                   <unicon class="flex-1 self-center" width="20" height="20" name="file-download-alt" :fill="$static.metadata.brandColors.layoutW1" ></unicon>
               </a>
-              <a title="View Linked Profile" class="flex self-center rounded-full w-8 h-8 transition duration-300 ease-out bg-transparent hover:bg-brand-n2 md:mx-auto mr-2 md:mb-2 opacity-50 hover:opacity-100" href="https://www.linkedin.com/in/rhanmiano" rel="noopener noreferrer" target="_blank">
+              <a title="Linkedin Profile" class="flex self-center rounded-full w-8 h-8 transition duration-300 ease-out bg-transparent hover:bg-brand-n2 md:mx-auto mr-2 md:mb-2 opacity-50 hover:opacity-100" href="https://www.linkedin.com/in/rhanmiano" rel="noopener noreferrer" target="_blank">
                   <unicon class="flex-1 self-center" width="20" height="20" name="linkedin-alt" :fill="$static.metadata.brandColors.layoutW1" ></unicon>
               </a>
-              <a  title="View Github" class="flex self-center rounded-full w-8 h-8 transition duration-300 ease-out bg-transparent hover:bg-brand-n2 md:mx-auto mr-2 md:mb-2 opacity-50 hover:opacity-100" href="https://github.com/rhanmiano" rel="noopener noreferrer" target="_blank">
+              <a  title="Github Profile" class="flex self-center rounded-full w-8 h-8 transition duration-300 ease-out bg-transparent hover:bg-brand-n2 md:mx-auto mr-2 md:mb-2 opacity-50 hover:opacity-100" href="https://github.com/rhanmiano" rel="noopener noreferrer" target="_blank">
                   <unicon class="flex-1 self-center" width="20" height="20" name="github-alt" :fill="$static.metadata.brandColors.layoutW1"></unicon>
               </a>
             </div>

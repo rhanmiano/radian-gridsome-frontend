@@ -7,6 +7,7 @@ import VueFilterDateFormat from 'vue-filter-date-format';
 import DefaultLayout from '~/App.vue'
 import Unicon from 'vue-unicons'
 import { 
+  uniArrowLeft,
   uniArrowRight, 
   uniLinkedinAlt, 
   uniGithubAlt, 
@@ -16,6 +17,7 @@ import {
   uniRedo  } from 'vue-unicons/src/icons'
 
 Unicon.add([
+  uniArrowLeft,
   uniArrowRight, 
   uniLinkedinAlt, 
   uniGithubAlt,
