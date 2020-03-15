@@ -7,10 +7,10 @@
         </div>
         <div class="flex-grow self-center leading-none font-glegoo">
           <strong class="project-title text-sm font-bold">{{name}}</strong> <br>
-          <span class="text-xxs text-layout-w2">Personal | {{new Date(date_from) | dateFormat('MMM YYYY')}} - {{new Date(date_end) | dateFormat('MMM YYYY')}} </span>
+          <span class="text-xxs text-layout-w2">{{category_name.toUpperCase() }} | {{new Date(date_from) | dateFormat('MMM YYYY')}} - {{new Date(date_end) | dateFormat('MMM YYYY')}} </span>
         </div>
         <div class="hidden sm:flex sm:w-2/4  flex-grow self-center">
-          <span class="text-xs text-layout-b1 leading-none pl-4">{{description}}</span>
+          <span class="text-xs text-layout-b1 leading-none pl-4">{{short_description}}</span>
         </div>
         
         
@@ -39,7 +39,15 @@ query {
 <script>
 export default {
     name: 'ProjectCard',
-    props: ['slug', 'name', 'description', 'date_from', 'date_end']
+    props: [
+      'name',
+      'slug',
+      'category_name',
+      'description',
+      'short_description',
+      'date_from',
+      'date_end'
+    ]
 }
 </script>
 

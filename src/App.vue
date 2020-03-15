@@ -31,8 +31,8 @@ export default {
 
 @font-face {
     font-family: 'Avenir';
-    src: url('./assets/fonts/AvenirLTStd-Book.otf') format('otf');
-    font-weight: bold;
+    src: url('./assets/fonts/AvenirLTStd-Medium.otf') format('otf');
+    font-weight: normal;
     font-style: normal;
 }
 </style>

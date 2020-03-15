@@ -17,9 +17,11 @@
               <ProjectCard 
                 v-for="edge in $page.projects.edges" 
                 :key="edge.node.id"
-                :slug="edge.node.id"
+                :slug="edge.node.slug"
                 :name="edge.node.name"
+                :category_name="edge.node.category.category_name"
                 :description="edge.node.description"
+                :short_description="edge.node.short_description"
                 :date_from="edge.node.date_from"
                 :date_end="edge.node.date_end"
               >
@@ -43,10 +45,15 @@
     }) { 
       edges {
         node {
-          id,
-          category_id,
+          id, 
           name,
+          slug,
+          category {
+            id,
+            category_name
+          },
           description,
+          short_description,
           date_from,
           date_end
         }

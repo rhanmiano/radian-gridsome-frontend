@@ -5,41 +5,74 @@
 // Changes here require a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
 const axios = require('axios')
+const slugify = require('slugify')
 
 module.exports = function (api) {
-  api.loadSource(async actions => {
+  api.loadSource(async ({addCollection, store}) => {
     // Use the Data Store API here: https://gridsome.org/docs/data-store-api/
 
-    const {data} = await axios.get('http://localhost/radian/radian-slim-backend/public/projects')
-    // console.log(data);
-    const projectCollection = actions.addCollection({
+    const {data: projects} = await axios.get('http://localhost/radian/radian-slim-backend/public/projects')
+
+    const {data: categories} = await axios.get('http://localhost/radian/radian-slim-backend/public/categories') 
+
+    const {data: tags} = await axios.get(`http://localhost/radian/radian-slim-backend/public/project_tags`)
+    
+    const projectCollection = addCollection({
       typeName: 'Projects'
     })
 
-    for (const item of data.projects) {
-      projectCollection.addNode({
-        id: item.id,
-        category_id: item.category_id,
-        name: item.name,
-        description: item.description,
-        img_url: item.img_url,
-        project_url: item.project_url,
-        hearts: item.hearts,
-        date_from: item.date_from,
-        date_end: item.date_end,
-        date_created: item.date_created,
-        date_updated: item.date_updated,
-        date_deleted: item.date_deleted,
-        is_shown: item.is_shown,
-        is_deleted: item.is_deleted
+    const categoryCollection = addCollection({
+      typeName: 'Categories'
+    })
 
+    const projectTagCollection = addCollection({
+      typeName: 'ProjectTags'
+    })
+
+    for (const category of categories.categories) {
+      categoryCollection.addNode({
+        id: category.id,
+        category_name: category.name,
+        is_deleted: category.is_deleted
       })
     }
+
+    for (const tag of tags.tags) {
+      projectTagCollection.addNode({
+        id: tag.id,
+        project_id: tag.project_id,
+        tag_id: tag.tag_id,
+        tag_name: tag.tag_name
+      })
+    }
+
+    for (const project of projects.projects) {
+      projectCollection.addNode({
+        id: project.id,
+        name: project.name,
+        slug: slugify(project.name, {lower: true}),
+        category_id: project.category_id,
+        category: store.createReference('Categories', project.category_id),
+        description: project.description,
+        short_description: project.short_description,
+        img_url: project.img_url ? project.img_url : '#',
+        project_url: project.project_url ? project.project_url : '#',
+        hearts: project.hearts,
+        date_from: project.date_from,
+        date_end: project.date_end,
+        date_created: project.date_created,
+        date_updated: project.date_updated,
+        date_deleted: project.date_deleted,
+        is_shown: project.is_shown,
+        is_deleted: project.is_deleted
+      })
+    }
+
   })
 
   api.createPages(async ({ graphql, createPage }) => {
     // Use the Pages API here: https://gridsome.org/docs/pages-api/
-    const { data } = await graphql(`{
+    const { data: qProjects } = await graphql(`{
       projects: allProjects(filter: {
         is_shown: {eq: 1}, 
         is_deleted:{eq: 0}
@@ -48,20 +81,36 @@ module.exports = function (api) {
           node {
             id,
             name,
-            description
+            slug,
+            category {
+              id,
+              category_name
+            },
+            description,
+            short_description,
+            img_url,
+            project_url,
+            date_from,
+            date_end
           }
         }
       }
     }`)
 
-    data.projects.edges.forEach(({ node }) => {
+    qProjects.projects.edges.forEach(({ node }) => {
       createPage({
-        path: `/portfolio/${node.id}`,
+        path: `/portfolio/${node.slug}`,
         component: './src/templates/ProjectDescription.vue',
         context: {
           id: node.id,
           name: node.name,
-          description: node.description
+          slug: node.slug,
+          category: node.category,
+          description: node.description,
+          short_description: node.short_description,
+          img_url: node.project_url,
+          date_from: node.date_from,
+          date_end: node.date_end
         }
       })
     })
