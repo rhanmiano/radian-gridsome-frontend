@@ -23,9 +23,6 @@
             <g-link class="text-center block w-full bg-white hover:bg-brand text-brand hover:text-layout-w1 rounded px-6 py-2 transition duration-300 ease-out border focus:outline-none" to="/about/" >Project Link/Demo</g-link>
             <div class="w-full flex flex-wrap mt-4">
               <span class="leading-none mb-1 bg-brand text-layout-w1 px-2 py-1 rounded-full text-xxs mr-1" v-for="edge in $page.projectTags.edges" :key="edge.node.id"> {{ edge.node.tag_name }} </span>
-              <!-- <span class="leading-none mb-1 bg-brand text-layout-w1 px-2 py-1 rounded-full text-xxs mr-1">Wordpress</span>
-              <span class="leading-none mb-1 bg-brand text-layout-w1 px-2 py-1 rounded-full text-xxs mr-1">Vue</span>
-              <span class="leading-none mb-1 bg-brand text-layout-w1 px-2 py-1 rounded-full text-xxs mr-1">Front-end Development</span> -->
             </div>
           </div>
         </div>

@@ -54,33 +54,38 @@
                   </button>
                 </div>
 
-                <div class="block w-full mb-4">
-                  <select class="w-full px-4 py-3 border rounded" v-model="form.selectedType">
+                <div class="block w-full mb-4 leading-snug">
+                  <select id="category" class="w-full px-4 py-3 border rounded" :class="{'border-red-400': formErrors.category.hasError}" @change="clearError" v-model="form.category">
                     <option class="text-layout-w2" value="0" selected disabled>Category</option>
-                    <option v-for="type in form.messageType" :key="type.id" :value="type.id">{{type.text}}</option>
+                    <option v-for="type in messageType" :key="type.id" :value="type.id">{{type.text}}</option>
                   </select>
+                  <span v-if="formErrors.category.error" class="text-red-400 text-xs">{{formErrors.category.error}}</span>
                 </div>
 
-                <div class="block w-full mb-4">
-                  <input class="w-full px-4 py-3 border rounded" type="text" placeholder="Nickname" v-model="form.nickname">
+                <div class="block w-full mb-4 leading-snug">
+                  <input id="nickname" class="w-full px-4 py-3 border rounded" :class="{'border-red-400': formErrors.nickname.hasError}" @change="clearError" type="text" placeholder="Nickname *" v-model="form.nickname">
+                  <span v-if="formErrors.nickname.error" class="text-red-400 text-xs">{{formErrors.nickname.error}}</span>
                 </div>
 
-                <div class="block w-full mb-4">
-                  <div class="inline-block w-2/4 pr-3">
-                    <input class="w-full px-4 py-3 border rounded" type="text" placeholder="Email" v-model="form.email">
+                <div class="flex w-full mb-4 leading-snug">
+                  <div class="w-2/4 pr-3">
+                    <input id="email" class="w-full px-4 py-3 border rounded" :class="{'border-red-400': formErrors.email.hasError}" @change="clearError" type="text" placeholder="Email *" v-model="form.email">
+                  <span v-if="formErrors.email.error" class="text-red-400 text-xs">{{formErrors.email.error}}</span>
                   </div>
-                  <div class="inline-block w-2/4 pl-3">
-                    <input class="w-full px-4 py-3 border rounded" type="text" placeholder="Contact No" v-model="form.contactNo">
+                  <div class="w-2/4 pl-3">
+                    <input id="contactNo" class="w-full px-4 py-3 border rounded" :class="{'border-red-400': formErrors.contactNo.hasError}" @change="clearError" type="text" placeholder="Contact No (optional)" v-model="form.contactNo">
+                    <span v-if="formErrors.contactNo.error" class="text-red-400 text-xs">{{formErrors.contactNo.error}}</span>
                   </div>
                 </div>
 
-                <div class="block w-full">
-                  <textarea class="w-full px-4 py-3 border rounded" name="" id="" cols="50" rows="10" placeholder="Say hi!" v-model="form.message">
+                <div class="block w-full leading-snug">
+                  <textarea id="message" class="w-full px-4 py-3 border rounded" :class="{'border-red-400': formErrors.message.hasError}" @change="clearError" cols="50" rows="10" placeholder="Say hi!" v-model="form.message">
                   </textarea>
+                  <span v-if="formErrors.message.error" class="text-red-400 text-xs">{{formErrors.message.error}}</span>
                 </div>
 
                 <div class="block w-full">
-                  <button type="submit" class="bg-white hover:bg-brand text-brand hover:text-layout-w1 rounded px-6 py-2 mt-2 font-semibold transition duration-300 ease-out border">Submit</button>
+                  <button @click.prevent="sendForm" type="submit" class="bg-white hover:bg-brand text-brand hover:text-layout-w1 rounded px-6 py-2 mt-2 font-semibold transition duration-300 ease-out border">Submit</button>
                 </div>
               </form>
             </div>
@@ -113,18 +118,8 @@ import SideNavLayout from '~/layouts/SideNavLayout.vue'
 
 import CustomFooter from '~/components/CustomFooter.vue'
 
-const initialFormState = {
-  selectedType: 0,
-  messageType: [
-    { id: 1, text: "General Inquiry"},
-    { id: 2, text: "Development"},
-    { id: 3, text: "Design"},
-  ],
-  nickname: "",
-  email: "",
-  contactNo: "",
-  message: ""
-}
+import axios from 'axios'
+import qs from 'qs';
 
 export default {
   name: 'Contact',
@@ -135,7 +130,40 @@ export default {
   },
   data() {
     return {
-      form: initialFormState,
+      form: {
+        category: 0,
+        nickname: "",
+        email: "",
+        contactNo: "",
+        message: ""
+      },
+      formErrors: {
+        category: {
+          hasError: false,
+          error: " "
+        },
+        nickname: {
+          hasError: false,
+          error: " "
+        },
+        email: {
+          hasError: false,
+          error: " "
+        },
+        contactNo: {
+          hasError: false,
+          error: " "
+        },
+        message: {
+          hasError: false,
+          error: " "
+        }
+      },
+      messageType: [
+        { id: 1, text: "General Inquiry"},
+        { id: 2, text: "Development"},
+        { id: 3, text: "Design"},
+      ],
       navInfo: {
         prev: {
           hasPrev: true,
@@ -153,11 +181,46 @@ export default {
     }
   },
   methods: {
+    clearError(e) {
+      const id = e.target.id
+
+      this.formErrors[id].hasError = false
+      this.formErrors[id].error = ""
+    },
     reset() {
-      this.form.selectedType = 0;
+      this.form.category = 0;
 
       this.form.nickname = this.form.email = this.form.contactNo = this.form.message = ""
+    },
+    async sendForm() {
+      const config = {
+        responseType: 'json',
+        headers: {'content-type': 'application/x-www-form-urlencoded'}
+      }
+
+      const {data} = await axios.post(
+        'http://localhost/radian/radian-slim-backend/public/message/save', 
+        qs.stringify(this.form),
+        config
+      )
+      console.log(typeof(data.errors));
+      if (!data.success) {
+        if (typeof(data.errors) !== 'string') {
+          console.log(data.errors)
+          for (const item in data.errors) {
+            if (this.formErrors.hasOwnProperty(item)) {
+              this.formErrors[item].hasError = true;
+              this.formErrors[item].error = data.errors[item][0];
+
+            }
+          }
+        }
+      }
+
+      console.log(this.formErrors);
+
     }
+
   },
   metaInfo: {
     title: 'Contact'
