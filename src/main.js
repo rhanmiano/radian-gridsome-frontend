@@ -2,7 +2,8 @@
 // The Client API can be used here. Learn more: gridsome.org/docs/client-api
 
 require('./assets/scss/main.scss')
-import VueFilterDateFormat from 'vue-filter-date-format';
+import VueFilterDateFormat from 'vue-filter-date-format'
+import FlashMessage from '@smartweb/vue-flash-message'
 
 import DefaultLayout from '~/App.vue'
 import Unicon from 'vue-unicons'
@@ -14,7 +15,8 @@ import {
   uniFileDownloadAlt, 
   uniCommentImage,
   uniMonitorHeartRate,
-  uniRedo  } from 'vue-unicons/src/icons'
+  uniRedo  
+} from 'vue-unicons/src/icons'
 
 Unicon.add([
   uniArrowLeft,
@@ -47,6 +49,12 @@ export default function (Vue, { router, head, isClient }) {
       'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
       'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
     ]
+  })
+  Vue.use(FlashMessage, {
+    name: 'flashMessage',
+    tag: 'FlashMessage',
+    time: 3000,
+    strategy: 'single'
   })
   
 }

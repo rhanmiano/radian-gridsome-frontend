@@ -2,6 +2,7 @@
   <SideNavLayout>
     <NavLayout :navInfo="navInfo">
       <main class="">
+        <FlashMessage></FlashMessage>
         <div class="container h-full w-full pt-12">
           <div class="w-full block md:flex px-8 md:pl-24">
             <div class="w-full md:w-8/12">
@@ -47,45 +48,48 @@
                 </svg>
               </figure>
 
-              <form class="w-full h-inherit bg-white shadow-xs p-8 rounded-sm text-layout-b1 text-sm lg:text-xs">
+              <form class="w-full h-inherit bg-white shadow-xs p-8 rounded-sm text-layout-b1 text-sm lg:text-xs relative">
+                <div v-if="loading" class="absolute flex justify-center w-full h-full top-0 left-0 bg-gray-100 opacity-50">
+                  <clip-loader class="self-center" :loading="true" :color="$static.metadata.brandColors.brand" :size="'80px'"></clip-loader>
+                </div>
                 <div class="block w-full">
-                  <button @click.prevent="reset" title="Reset" class="bg-white hover:bg-gray-200 text-brand rounded px-4 py-1 my-2 font-bold transition duration-300 ease-out border pull-right">
+                  <button @click.prevent="resetForm(); clearFormErrors()" title="Reset" class="bg-white hover:bg-gray-200 text-brand rounded px-4 py-1 my-2 font-bold transition duration-300 ease-out border pull-right focus:outline-none">
                     <unicon class="flex-1 self-center" width="10" height="10" name="redo" :fill="$static.metadata.brandColors.brand"></unicon>
                   </button>
                 </div>
 
                 <div class="block w-full mb-4 leading-snug">
-                  <select id="category" class="w-full px-4 py-3 border rounded" :class="{'border-red-400': formErrors.category.hasError}" @change="clearError" v-model="form.category">
+                  <select id="category" class="w-full px-4 py-3 border rounded focus:outline-none focus:border-brand" :class="{'border-red-400': formErrors.category.hasError}" @change="clearError" v-model="form.category">
                     <option class="text-layout-w2" value="0" selected disabled>Category</option>
                     <option v-for="type in messageType" :key="type.id" :value="type.id">{{type.text}}</option>
                   </select>
-                  <span v-if="formErrors.category.error" class="text-red-400 text-xs">{{formErrors.category.error}}</span>
+                  <span v-if="formErrors.category.error" class="text-red-400 text-xxs">{{formErrors.category.error}}</span>
                 </div>
 
                 <div class="block w-full mb-4 leading-snug">
-                  <input id="nickname" class="w-full px-4 py-3 border rounded" :class="{'border-red-400': formErrors.nickname.hasError}" @change="clearError" type="text" placeholder="Nickname *" v-model="form.nickname">
-                  <span v-if="formErrors.nickname.error" class="text-red-400 text-xs">{{formErrors.nickname.error}}</span>
+                  <input id="nickname" class="w-full px-4 py-3 border rounded focus:outline-none focus:border-brand" :class="{'border-red-400': formErrors.nickname.hasError}" @change="clearError" type="text" placeholder="Nickname *" v-model="form.nickname">
+                  <span v-if="formErrors.nickname.error" class="text-red-400 text-xxs">{{formErrors.nickname.error}}</span>
                 </div>
 
                 <div class="flex w-full mb-4 leading-snug">
                   <div class="w-2/4 pr-3">
-                    <input id="email" class="w-full px-4 py-3 border rounded" :class="{'border-red-400': formErrors.email.hasError}" @change="clearError" type="text" placeholder="Email *" v-model="form.email">
-                  <span v-if="formErrors.email.error" class="text-red-400 text-xs">{{formErrors.email.error}}</span>
+                    <input id="email" class="w-full px-4 py-3 border rounded focus:outline-none focus:border-brand" :class="{'border-red-400': formErrors.email.hasError}" @change="clearError" type="text" placeholder="Email *" v-model="form.email">
+                  <span v-if="formErrors.email.error" class="text-red-400 text-xxs">{{formErrors.email.error}}</span>
                   </div>
                   <div class="w-2/4 pl-3">
-                    <input id="contactNo" class="w-full px-4 py-3 border rounded" :class="{'border-red-400': formErrors.contactNo.hasError}" @change="clearError" type="text" placeholder="Contact No (optional)" v-model="form.contactNo">
-                    <span v-if="formErrors.contactNo.error" class="text-red-400 text-xs">{{formErrors.contactNo.error}}</span>
+                    <input id="contactNo" class="w-full px-4 py-3 border rounded focus:outline-none focus:border-brand" :class="{'border-red-400': formErrors.contactNo.hasError}" @change="clearError" type="text" placeholder="Contact No (optional)" v-model="form.contactNo">
+                    <span v-if="formErrors.contactNo.error" class="text-red-400 text-xxs">{{formErrors.contactNo.error}}</span>
                   </div>
                 </div>
 
                 <div class="block w-full leading-snug">
-                  <textarea id="message" class="w-full px-4 py-3 border rounded" :class="{'border-red-400': formErrors.message.hasError}" @change="clearError" cols="50" rows="10" placeholder="Say hi!" v-model="form.message">
+                  <textarea id="message" class="w-full px-4 py-3 border rounded focus:outline-none focus:border-brand" :class="{'border-red-400': formErrors.message.hasError}" @change="clearError" cols="50" rows="10" placeholder="Say hi!" v-model="form.message">
                   </textarea>
-                  <span v-if="formErrors.message.error" class="text-red-400 text-xs">{{formErrors.message.error}}</span>
+                  <span v-if="formErrors.message.error" class="text-red-400 text-xxs">{{formErrors.message.error}}</span>
                 </div>
 
-                <div class="block w-full">
-                  <button @click.prevent="sendForm" type="submit" class="bg-white hover:bg-brand text-brand hover:text-layout-w1 rounded px-6 py-2 mt-2 font-semibold transition duration-300 ease-out border">Submit</button>
+                <div class="block w-full mt-4">
+                  <button @click.prevent="sendForm" type="submit" class="bg-white hover:bg-brand text-brand hover:text-layout-w1 rounded px-6 py-2 mt-2 font-semibold transition duration-300 ease-out border focus:outline-none">Submit</button>
                 </div>
               </form>
             </div>
@@ -117,7 +121,9 @@ import NavLayout from '~/layouts/NavLayout.vue'
 import SideNavLayout from '~/layouts/SideNavLayout.vue'
 
 import CustomFooter from '~/components/CustomFooter.vue'
+import CustomNotif from '~/components/CustomNotif.vue'
 
+import ClipLoader from 'vue-spinner/src/ClipLoader.vue'
 import axios from 'axios'
 import qs from 'qs';
 
@@ -126,10 +132,12 @@ export default {
   components: {
     NavLayout,
     SideNavLayout,
-    CustomFooter
+    CustomFooter,
+    ClipLoader
   },
   data() {
     return {
+      loading: false,
       form: {
         category: 0,
         nickname: "",
@@ -181,44 +189,64 @@ export default {
     }
   },
   methods: {
+    clearFormErrors(e) {
+      for (const item in this.formErrors) {
+        if (this.formErrors.hasOwnProperty(item)) {
+          this.formErrors[item].hasError = false
+          this.formErrors[item].error = ""
+        }
+      }
+    },
     clearError(e) {
       const id = e.target.id
 
       this.formErrors[id].hasError = false
       this.formErrors[id].error = ""
     },
-    reset() {
-      this.form.category = 0;
-
+    resetForm() {
+      this.form.category = 0
       this.form.nickname = this.form.email = this.form.contactNo = this.form.message = ""
     },
     async sendForm() {
+      this.loading = true;
       const config = {
         responseType: 'json',
         headers: {'content-type': 'application/x-www-form-urlencoded'}
       }
 
-      const {data} = await axios.post(
+      const { data } = await axios.post(
         'http://localhost/radian/radian-slim-backend/public/message/save', 
         qs.stringify(this.form),
         config
       )
-      console.log(typeof(data.errors));
-      if (!data.success) {
+      console.log(data);
+      this.loading = false
+      if (data.success) {
+        this.clearFormErrors()
+        this.resetForm()
+
+        this.flashMessage.success({
+          title: 'Success!',
+          message: 'Thank you, your message has been sent to Rhan.',
+          position: 'bottom-right'
+        })
+      } else {
         if (typeof(data.errors) !== 'string') {
-          console.log(data.errors)
           for (const item in data.errors) {
             if (this.formErrors.hasOwnProperty(item)) {
-              this.formErrors[item].hasError = true;
-              this.formErrors[item].error = data.errors[item][0];
-
+              this.formErrors[item].hasError = true
+              this.formErrors[item].error = data.errors[item][0]
             }
           }
         }
+
+        this.flashMessage.warning({
+          title: 'Oops!',
+          message: 'Kindly check for field errors',
+          // componentName: CustomNotif,
+          position: 'bottom-right'
+        })
       }
-
-      console.log(this.formErrors);
-
     }
 
   },

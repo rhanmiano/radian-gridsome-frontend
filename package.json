@@ -8,6 +8,7 @@
     "explore": "gridsome explore"
   },
   "dependencies": {
+    "@smartweb/vue-flash-message": "^0.6.2",
     "axios": "^0.19.2",
     "gridsome": "^0.7.0",
     "qs": "^6.9.1",
@@ -15,6 +16,7 @@
     "tailwindcss": "^1.2.0",
     "undefined": "^0.1.0",
     "vue-filter-date-format": "^1.3.1",
+    "vue-spinner": "^1.0.3",
     "vue-unicons": "^2.0.3"
   },
   "devDependencies": {
