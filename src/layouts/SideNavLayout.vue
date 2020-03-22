@@ -21,7 +21,9 @@
             </div>
         </nav>
       </div>
-      <slot/>
+      <transition name="fade" appear>
+        <slot/>
+      </transition>
   </div>
 </template>
 

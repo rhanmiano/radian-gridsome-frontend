@@ -2,7 +2,9 @@
   <SideNavLayout>
     <NavLayout :navInfo="navInfo">
       <main class="">
+        <ClientOnly>
         <FlashMessage></FlashMessage>
+        </ClientOnly>
         <div class="container h-full w-full pt-12">
           <div class="w-full block md:flex px-8 md:pl-24">
             <div class="w-full md:w-8/12">
@@ -175,13 +177,13 @@ export default {
       navInfo: {
         prev: {
           hasPrev: true,
-          linksTo: '/portfolio/',
-          linkText: 'Portfolio',
+          linksTo: '/feed/',
+          linkText: 'feed',
         },
         next: {
           hasNext: false,
-          linksTo: '/feed/',
-          linkText: 'Feed',
+          linksTo: '',
+          linkText: '',
         },
         linkColor: 'text-brand',
         iconColor: '#11A89D'
@@ -219,7 +221,7 @@ export default {
         qs.stringify(this.form),
         config
       )
-      console.log(data);
+
       this.loading = false
       if (data.success) {
         this.clearFormErrors()

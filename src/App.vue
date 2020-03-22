@@ -37,7 +37,9 @@ export default {
 }
 
 /* Tabs */
-
+.tab-content {
+  min-height: 500px;
+}
 .default-tabs {
   position: relative;
   margin: 0 auto;
@@ -80,4 +82,15 @@ export default {
     transition: transform 0.4s ease, width 0.4s ease;
   }
 }
+
+.fade-enter-active {
+  transition: opacity 400ms ease-in-out;
+}
+
+.fade-enter {
+  opacity: 0;
+  position: relative;
+  left: -10px;
+}
+
 </style>
