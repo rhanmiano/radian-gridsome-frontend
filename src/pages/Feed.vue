@@ -174,13 +174,13 @@ export default {
     },
     async getRepos() {
       const {data} = await axios.post(
-        `https://api.github.com/graphql`,
+        `${process.env.GRIDSOME_GH_API_URL}`,
         repoQuery,
         {
           responseType: 'json',
           headers: {
             'content-type': 'application/json',
-            'authorization': 'bearer 34f44225bba2d100df53ec1925b85cb94027ac24'
+            'authorization': `bearer ${process.env.GRIDSOME_GH_TOKEN}`
           },
         }
       )
@@ -192,8 +192,6 @@ export default {
     this.getRepos()
     .then(res => {
       this.repos = res.data.viewer.repositories.edges
-
-      console.log(this.repos)
     })
   },
   metaInfo: {

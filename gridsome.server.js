@@ -13,18 +13,17 @@ module.exports = function (api) {
     // Use the Data Store API here: https://gridsome.org/docs/data-store-api/
 
     const {data: projects} = await axios.get(
-      'http://localhost/radian/radian-slim-backend/public/projects'
+      `${process.env.GRIDSOME_RESOURCE_URL}/projects`
     )
 
     const {data: categories} = await axios.get(
-      'http://localhost/radian/radian-slim-backend/public/categories'
+      `${process.env.GRIDSOME_RESOURCE_URL}/categories`
     ) 
 
     const {data: tags} = await axios.get(
-      `http://localhost/radian/radian-slim-backend/public/project_tags`
+      `${process.env.GRIDSOME_RESOURCE_URL}/project_tags`
     )
     
-    // console.log(repos.data.repositories.edges)
     const projectCollection = addCollection({
       typeName: 'Projects'
     })
@@ -35,10 +34,6 @@ module.exports = function (api) {
 
     const projectTagCollection = addCollection({
       typeName: 'ProjectTags'
-    })
-
-    const repoCollection = addCollection({
-      typeName: 'Repos'
     })
 
     for (const category of categories.categories) {
@@ -80,15 +75,6 @@ module.exports = function (api) {
       })
     }
 
-    // for (const repo of repos.viewer.repositories.edges) {
-    //   repoCollection.addNode({
-    //     id: repo.id,
-    //     name: repo.name,
-    //     html_url: repo.html_url,
-    //     language: repo.language,
-    //     updated_at: repo.updated_at
-    //   })
-    // }
   })
 
   api.createPages(async ({ graphql, createPage }) => {

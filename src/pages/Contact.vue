@@ -215,7 +215,7 @@ export default {
       }
 
       const { data } = await axios.post(
-        'http://localhost/radian/radian-slim-backend/public/message/save', 
+        `${process.env.GRIDSOME_RESOURCE_URL}/message/save`, 
         qs.stringify(this.form),
         config
       )
