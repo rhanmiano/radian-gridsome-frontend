@@ -175,12 +175,12 @@ export default {
       navInfo: {
         prev: {
           hasPrev: true,
-          linksTo: '/portfolio',
+          linksTo: '/portfolio/',
           linkText: 'Portfolio',
         },
         next: {
           hasNext: false,
-          linksTo: '/feed',
+          linksTo: '/feed/',
           linkText: 'Feed',
         },
         linkColor: 'text-brand',

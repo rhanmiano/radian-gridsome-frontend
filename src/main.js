@@ -15,7 +15,8 @@ import {
   uniFileDownloadAlt, 
   uniCommentImage,
   uniMonitorHeartRate,
-  uniRedo  
+  uniRedo,
+  uniExternalLinkAlt
 } from 'vue-unicons/src/icons'
 
 Unicon.add([
@@ -26,7 +27,8 @@ Unicon.add([
   uniFileDownloadAlt,
   uniCommentImage,
   uniMonitorHeartRate,
-  uniRedo
+  uniRedo,
+  uniExternalLinkAlt
 ])
 
 export default function (Vue, { router, head, isClient }) {

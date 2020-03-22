@@ -88,8 +88,8 @@ export default {
         },
         next: {
           hasNext: true,
-          linksTo: '/contact/',
-          linkText: 'Contact',
+          linksTo: '/feed/',
+          linkText: 'Feed',
         },
         linkColor: 'text-brand',
         iconColor: '#11A89D'
