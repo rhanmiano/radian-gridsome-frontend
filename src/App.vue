@@ -93,4 +93,35 @@ export default {
   left: -10px;
 }
 
+.msg-block {
+    @apply text-layout-b1 leading-none z-50 #{!important};
+
+    .msg-content {
+      @apply py-2 #{!important};
+
+      h3 {
+        @apply m-0 my-2 text-sm #{!important};
+      }
+
+      p {
+          @apply mb-2 #{!important};
+      }
+ 
+    }
+}
+
+@screen lg {
+    .msg-block {
+        @apply text-xs w-1/5;
+    }
+}
+
+._vue-flash-msg-body_success,
+._vue-flash-msg-body_warning,
+._vue-flash-msg-body_info,
+._vue-flash-msg-body_error {
+    background-color: rgba(255,255,255, .8) !important;
+    @apply border-none #{!important};
+}
+
 </style>

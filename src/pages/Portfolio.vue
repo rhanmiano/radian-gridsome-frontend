@@ -84,12 +84,12 @@ export default {
         prev: {
           hasPrev: true,
           linksTo: '/about/',
-          linkText: 'About',
+          linkText: 'about',
         },
         next: {
           hasNext: true,
           linksTo: '/feed/',
-          linkText: 'Feed',
+          linkText: 'feed',
         },
         linkColor: 'text-brand',
         iconColor: '#11A89D'

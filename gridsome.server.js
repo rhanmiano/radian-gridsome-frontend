@@ -6,7 +6,6 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 const axios = require('axios')
 const slugify = require('slugify')
-const qs = require('qs')
 
 module.exports = function (api) {
   api.loadSource(async ({addCollection, store}) => {

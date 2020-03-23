@@ -57,6 +57,8 @@ import SideNavLayout from '~/layouts/SideNavLayout.vue'
 
 import CustomFooter from '~/components/CustomFooter.vue'
 
+import unescape from 'lodash/unescape'
+
 export default {
   name: 'ProjectDescription',
   components: {
@@ -70,24 +72,29 @@ export default {
         prev: {
           hasPrev: true,
           linksTo: '/portfolio',
-          linkText: 'Portfolio',
+          linkText: 'portfolio',
         },
         next: {
           hasNext: true,
           linksTo: '/feed',
-          linkText: 'Feed',
+          linkText: 'feed',
         },
         linkColor: 'text-brand',
         iconColor: '#11A89D'
       },
-      test: "<p><strong>Hello World</p></strong>"
+      // unescape: new DOMParser()
     }
   },
   methods: {
     htmlDecode(input) {
-      var doc = new DOMParser().parseFromString(input, "text/html");
-      return doc.documentElement.textContent;
+      return unescape(input);
+      // var doc = this.DOMParser.parseFromString(input, "text/html");
+      // return doc.documentElement.textContent;
+
     }
+  },
+  mounted() {
+
   },
   metaInfo: {
     title: 'Portfolio'

@@ -72,12 +72,12 @@ export default {
         prev: {
           hasPrev: true,
           linksTo: '/',
-          linkText: 'Home',
+          linkText: 'home',
         },
         next: {
           hasNext: true,
           linksTo: '/portfolio/',
-          linkText: 'Portfolio',
+          linkText: 'portfolio',
         },
         linkColor: 'text-brand',
         iconColor: '#11A89D'

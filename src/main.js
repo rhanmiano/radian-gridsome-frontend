@@ -3,10 +3,10 @@
 
 require('./assets/scss/main.scss')
 import VueFilterDateFormat from 'vue-filter-date-format'
-import FlashMessage from '@smartweb/vue-flash-message'
+// import FlashMessage from '@smartweb/vue-flash-message'
 
 import DefaultLayout from '~/App.vue'
-import Unicon from 'vue-unicons'
+/* import Unicon from 'vue-unicons'
 import { 
   uniArrowLeft,
   uniArrowRight, 
@@ -29,12 +29,11 @@ Unicon.add([
   uniMonitorHeartRate,
   uniRedo,
   uniExternalLinkAlt
-])
+]) */
 
 export default function (Vue, { router, head, isClient }) {
   // Set default layout as a global component
   Vue.component('App', DefaultLayout)
-  Vue.use(Unicon)
   Vue.use(VueFilterDateFormat, {
     dayOfWeekNames: [
       'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday',
@@ -52,11 +51,44 @@ export default function (Vue, { router, head, isClient }) {
       'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
     ]
   })
-  Vue.use(FlashMessage, {
-    name: 'flashMessage',
-    tag: 'FlashMessage',
-    time: 3000,
-    strategy: 'single'
-  })
+
+  if (isClient) {
+    const FlashMessage = require('@smartweb/vue-flash-message').default
+
+    Vue.use(FlashMessage, {
+      name: 'flashMessage',
+      tag: 'FlashMessage',
+      time: 3000,
+      strategy: 'single'
+    })
+
+    const Unicon = require('vue-unicons').default
+    const { 
+      uniArrowLeft,
+      uniArrowRight, 
+      uniLinkedinAlt, 
+      uniGithubAlt, 
+      uniFileDownloadAlt, 
+      uniCommentImage,
+      uniMonitorHeartRate,
+      uniRedo,
+      uniExternalLinkAlt
+    } = require('vue-unicons/src/icons')
+
+    Unicon.add([
+      uniArrowLeft,
+      uniArrowRight, 
+      uniLinkedinAlt, 
+      uniGithubAlt,
+      uniFileDownloadAlt,
+      uniCommentImage,
+      uniMonitorHeartRate,
+      uniRedo,
+      uniExternalLinkAlt
+    ])
+
+    Vue.use(Unicon)
+
+  }
   
 }

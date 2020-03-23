@@ -1,10 +1,9 @@
 <template>
+  <ClientOnly>
   <SideNavLayout>
     <NavLayout :navInfo="navInfo">
       <main class="">
-        <ClientOnly>
         <FlashMessage></FlashMessage>
-        </ClientOnly>
         <div class="container h-full w-full pt-12">
           <div class="w-full block md:flex px-8 md:pl-24">
             <div class="w-full md:w-8/12">
@@ -104,6 +103,7 @@
       </main>
     </NavLayout>
   </SideNavLayout>
+  </ClientOnly>
 </template>
 
 <static-query>
@@ -187,7 +187,7 @@ export default {
         },
         linkColor: 'text-brand',
         iconColor: '#11A89D'
-      }
+      },
     }
   },
   methods: {
@@ -227,10 +227,13 @@ export default {
         this.clearFormErrors()
         this.resetForm()
 
-        this.flashMessage.success({
+        this.flashMessage.show({
+          status: 'success',
           title: 'Success!',
           message: 'Thank you, your message has been sent to Rhan.',
-          position: 'bottom-right'
+          position: 'bottom-right',
+          blockClass: 'msg-block',
+          contentClass: 'msg-content'
         })
       } else {
         if (typeof(data.errors) !== 'string') {
@@ -242,15 +245,18 @@ export default {
           }
         }
 
-        this.flashMessage.warning({
+        this.flashMessage.show({
+          status: 'warning',
           title: 'Oops!',
           message: 'Kindly check for field errors',
-          // componentName: CustomNotif,
-          position: 'bottom-right'
+          position: 'bottom-right',
+          blockClass: 'msg-block',
+          contentClass: 'msg-content'
         })
       }
     }
-
+  },
+  mounted() {
   },
   metaInfo: {
     title: 'Contact'
@@ -258,6 +264,6 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 
 </style>

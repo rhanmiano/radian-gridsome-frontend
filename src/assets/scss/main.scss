@@ -71,36 +71,6 @@ h2,h3,h4 {
     }
 }
 
-._vue-flash-msg-body {
-    @apply text-layout-b1 leading-none z-50;
-
-    h3 {
-        @apply m-0 my-2 text-sm;
-    }
-
-    p {
-        @apply mb-2
-    }
-
-    ._vue-flash-msg-body__content {
-        @apply py-2;
-    }
-}
-
-@screen lg {
-    ._vue-flash-msg-body {
-        @apply text-xs w-1/5;
-    }
-}
-
-._vue-flash-msg-body_success,
-._vue-flash-msg-body_warning,
-._vue-flash-msg-body_info,
-._vue-flash-msg-body_error {
-    background-color: rgba(255,255,255, .8) !important;
-    @apply border-none #{!important};
-}
-
 @media (min-width: 992px) {
     html, body {
         font-size: calc(#{$base-size}px + (#{$max-size} - #{$base-size}) * ((100vw - #{$from}px) / (#{$to} - #{$from})));

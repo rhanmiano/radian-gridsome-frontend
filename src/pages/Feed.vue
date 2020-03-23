@@ -152,17 +152,17 @@ export default {
   },
   data() {
     return {
-      repos: JSON.parse(localStorage.getItem('lsRepos')) ? JSON.parse(localStorage.getItem('lsRepos')) : [],
+      repos: [],
       navInfo: {
         prev: {
           hasPrev: true,
           linksTo: '/portfolio/',
-          linkText: 'Portfolio',
+          linkText: 'portfolio',
         },
         next: {
           hasNext: true,
           linksTo: '/contact/',
-          linkText: 'Contact',
+          linkText: 'contact',
         },
         linkColor: 'text-brand',
         iconColor: '#11A89D'
@@ -201,7 +201,11 @@ export default {
       .then(() => {
         this.repos = JSON.parse(localStorage.getItem('lsRepos'))
       })
+    } else {
+      this.repos = JSON.parse(localStorage.getItem('lsRepos'))
     }
+
+    //  ? JSON.parse(localStorage.getItem('lsRepos')) : []
   },
   metaInfo: {
     title: 'Feed'
