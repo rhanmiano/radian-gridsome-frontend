@@ -3,33 +3,71 @@
 
 require('./assets/scss/main.scss')
 import VueFilterDateFormat from 'vue-filter-date-format'
-// import FlashMessage from '@smartweb/vue-flash-message'
 
 import DefaultLayout from '~/App.vue'
-/* import Unicon from 'vue-unicons'
-import { 
-  uniArrowLeft,
-  uniArrowRight, 
-  uniLinkedinAlt, 
-  uniGithubAlt, 
-  uniFileDownloadAlt, 
-  uniCommentImage,
-  uniMonitorHeartRate,
-  uniRedo,
-  uniExternalLinkAlt
-} from 'vue-unicons/src/icons'
 
-Unicon.add([
-  uniArrowLeft,
-  uniArrowRight, 
-  uniLinkedinAlt, 
-  uniGithubAlt,
-  uniFileDownloadAlt,
-  uniCommentImage,
-  uniMonitorHeartRate,
-  uniRedo,
-  uniExternalLinkAlt
-]) */
+const meta = [
+  {
+    key: 'author',
+    name: 'author',
+    content: 'Rhan Miano'
+  },
+  {
+    key: 'decription',
+    name: 'decription',
+    content: 'Aspiring Web Developer from Taguig, PH'
+  },
+  {
+    key: 'keywords',
+    name: 'keywords',
+    content: 'Web Developer, Software Engineer, Software Developer, Fullstack Developer, Taguig, Philippines'
+  },
+  {
+    key: 'og:type',
+    name: 'og:type',
+    content: 'website'
+  },
+  {
+    key: 'og:url',
+    name: 'og:url',
+    content: 'https://rhanmiano.me'
+  },
+  {
+    key: 'og:title',
+    name: 'og:title',
+    content: 'Rhan Miano'
+  },
+  {
+    key: 'og:description',
+    name: 'og:description',
+    content: 'Aspiring Web Developer from Taguig, PH'
+  },
+  {
+    key: 'og:site_name',
+    name: 'og:site_name',
+    content: 'Rhan Miano - Web Developer'
+  },
+  {
+    key: 'og:locale',
+    name: 'og:locale',
+    content: 'en_US'
+  },
+  {
+    key: 'og:image',
+    name: 'og:image',
+    content: 'https://rhanmiano.me/assets/static/radian-og-banner.png'
+  },
+  {
+    key: 'og:image:width',
+    name: 'og:image:width',
+    content: '776'
+  },
+  {
+    key: 'og:site_name',
+    name: 'og:site_name',
+    content: '338'
+  }
+]
 
 export default function (Vue, { router, head, isClient }) {
   // Set default layout as a global component
@@ -91,4 +129,5 @@ export default function (Vue, { router, head, isClient }) {
 
   }
   
+  head.meta.push(...meta);
 }

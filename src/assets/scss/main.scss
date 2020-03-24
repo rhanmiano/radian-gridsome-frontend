@@ -18,7 +18,7 @@ $font-max-size: 20px;
 html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font: normal normal 300 #{$font-base-size} / 1.618em theme('fontFamily.avenir');
+    font: normal normal 400 #{$font-base-size} / 1.618em theme('fontFamily.avenir');
 }
 
 // Body base
@@ -35,13 +35,17 @@ h1, h2, h3, h4, h5, h6 {
         margin: 1.5rem 0;
     }
 
-    &.decor::after {
-        content: "";
-        left: 0;
-        display: block;
-        border-radius: 5px;
-        background-color: #0E7971;
-        z-index: 1;
+    &.decor {
+        font-family: theme('fontFamily.glegoo-bold');
+        color: theme('colors.layout-b2');
+
+        &::after {
+            content: "";
+            left: 0;
+            display: block;
+            background-color: theme('colors.brand-n2');
+            z-index: 1;
+        }
     }
 }
 
@@ -62,12 +66,10 @@ h2,h3,h4 {
 }
 
 .external-link {
-    @apply text-brand;
+    @apply text-brand-n2 transition duration-200 font-semibold;
     text-decoration: underline;
-    @apply transition;
-    @apply duration-500;
     &:hover {
-        @apply text-brand-n2;
+        @apply text-layout-b1;
     }
 }
 

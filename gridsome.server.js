@@ -114,7 +114,8 @@ module.exports = function (api) {
           category: node.category,
           description: node.description,
           short_description: node.short_description,
-          img_url: node.project_url,
+          img_url: node.img_url,
+          project_url: node.project_url,
           date_from: node.date_from,
           date_end: node.date_end
         }

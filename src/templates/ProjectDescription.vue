@@ -8,7 +8,7 @@
             <div class="relative bg-white rounded p-8 shadow-xs">
               <!-- <div class="absolute w-full "></div> -->
               <g-image class="" src="~/assets/img/sample-project.png"></g-image>
-              <p class="leading-none text-xxs font-glegoo">
+              <p class="leading-tight text-xxs font-glegoo">
                 <strong>{{ $context.category.category_name }}</strong> <br>
                 <span class="text-layout-w2">{{new Date($context.date_from) | dateFormat('MMM YYYY')}} - {{new Date($context.date_end) | dateFormat('MMM YYYY')}} </span>
                 <br>
@@ -20,7 +20,7 @@
             </div>
           </div>
           <div class="w-full md:w-4/12 md:pl-8 pt-4">
-            <g-link class="text-center block w-full bg-white hover:bg-brand text-brand hover:text-layout-w1 rounded px-6 py-2 transition duration-300 ease-out border focus:outline-none" to="/about/" >Project Link/Demo</g-link>
+            <g-link class="text-center block w-full bg-white hover:bg-brand text-brand hover:text-layout-w1 rounded px-6 py-2 transition duration-300 ease-out border focus:outline-none" :to="$context.project_url" >Project Link/Demo</g-link>
             <div class="w-full flex flex-wrap mt-4">
               <span class="leading-none mb-1 bg-brand text-layout-w1 px-2 py-1 rounded-full text-xxs mr-1" v-for="edge in $page.projectTags.edges" :key="edge.node.id"> {{ edge.node.tag_name }} </span>
             </div>
