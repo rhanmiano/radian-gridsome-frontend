@@ -28,7 +28,7 @@
                   <span class="text-xxs text-gray-500">
                     {{new Date(commit.node.committedDate) | dateFormat('MMM DD, YYYY')}}
                   </span> <br>
-                  <strong class="text-brand text-xxs">{{commit.node.message}}</strong>
+                  <strong class="text-brand text-xxs font-light">{{commit.node.message}}</strong>
                 </p>
               </li>
           </ul>

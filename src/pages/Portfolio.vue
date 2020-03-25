@@ -7,7 +7,7 @@
             <div class="w-full lg:w-8/12">
               <h1 class="decor mt-0">Portfolio</h1>
               
-              <p class="text-xl text-layout-b1">Selected personal and commissioned projects.</p>
+              <p class="text-xl text-layout-b1">A showcase of selected projects from the moment I was just starting to love the web, up until "woah, what was I doing back then".</p>
 
               <figure class="w-full my-8">
                 <svg class="mx-auto w-1/2" xmlns="http://www.w3.org/2000/svg"viewBox="0 0 332.521 269.6">

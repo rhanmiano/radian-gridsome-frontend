@@ -21,7 +21,7 @@
                 />
                 <div class="tab-content">
                   <div v-if="currentTab === '1'">
-                    <h3>Repos with most recent updates</h3>
+                    <h4 class="font-glegoo-bold">Repos with most recent updates</h4>
                     <div v-if="repos.length == 0" class="flex justify-center w-full h-full bg-transparnt">
                       <clip-loader class="self-center" :loading="true" :color="$static.metadata.brandColors.brand" :size="'80px'"></clip-loader>
                     </div>
@@ -40,7 +40,7 @@
 
                   </div>
                   <div v-if="currentTab === '2' || currentTab === '3'">
-                    <h3>{{ currentTab === '2' ? 'UI Design' : 'Travel'}}</h3>
+                    <h4 class="font-glegoo-bold">{{ currentTab === '2' ? 'UI Design' : 'Travel'}}</h4>
                     <figure class="w-full my-8">
                       <svg class="mx-auto w-1/4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 421.333 290.438">
                         <g transform="translate(.003)">
@@ -192,20 +192,18 @@ export default {
         }
       )
 
-      localStorage.setItem('lsRepos', JSON.stringify(data.data.viewer.repositories.edges))
+      sessionStorage.setItem('lsRepos', JSON.stringify(data.data.viewer.repositories.edges))
     }
   },
   mounted() {
-    if (!localStorage.getItem('lsRepos')) {
+    if (!sessionStorage.getItem('lsRepos')) {
       this.getRepos()
       .then(() => {
-        this.repos = JSON.parse(localStorage.getItem('lsRepos'))
+        this.repos = JSON.parse(sessionStorage.getItem('lsRepos'))
       })
     } else {
-      this.repos = JSON.parse(localStorage.getItem('lsRepos'))
+      this.repos = JSON.parse(sessionStorage.getItem('lsRepos'))
     }
-
-    //  ? JSON.parse(localStorage.getItem('lsRepos')) : []
   },
   metaInfo: {
     title: 'Feed'
