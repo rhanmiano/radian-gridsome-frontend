@@ -7,7 +7,7 @@
           <div class="w-full md:w-8/12">
             <div class="relative bg-white rounded p-8 shadow-xs">
               <!-- <div class="absolute w-full "></div> -->
-              <g-image class="" src="~/assets/img/sample-project.png"></g-image>
+              <g-image class="" :src="$context.img_url"></g-image>
               <p class="leading-tight text-xxs font-glegoo">
                 <strong>{{ $context.category.category_name }}</strong> <br>
                 <span class="text-layout-w2">{{new Date($context.date_from) | dateFormat('MMM YYYY')}} - {{new Date($context.date_end) | dateFormat('MMM YYYY')}} </span>
@@ -15,7 +15,7 @@
               </p>
               <h1 class="m-0 mt-2 font-glegoo-bold leading-tight">{{ $context.name }}</h1>
               
-              <div class="text-layout-b2 mt-8 font-light" v-html="htmlDecode($context.description)">
+              <div class="text-layout-b2 mt-8 font-light" id="project-description" v-html="htmlDecode($context.description)">
               </div>
             </div>
           </div>
@@ -101,3 +101,9 @@ export default {
   },
 }
 </script>
+
+<style lang="scss" scoped>
+div#project-description {
+  @apply mb-2;
+}
+</style>

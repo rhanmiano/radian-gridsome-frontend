@@ -22,6 +22,8 @@
                 :category_name="edge.node.category.category_name"
                 :description="edge.node.description"
                 :short_description="edge.node.short_description"
+                :tech="edge.node.tech"
+                :project_url="edge.node.project_url"
                 :date_from="edge.node.date_from"
                 :date_end="edge.node.date_end"
               >
@@ -54,6 +56,8 @@
           },
           description,
           short_description,
+          tech,
+          project_url,
           date_from,
           date_end
         }

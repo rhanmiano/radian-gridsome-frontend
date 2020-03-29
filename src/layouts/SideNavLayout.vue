@@ -9,7 +9,7 @@
             </g-link>
 
             <div class="flex md:w-full md:block">
-              <a title="Download CV" class="flex self-center rounded-full w-8 h-8 transition duration-300 ease-out bg-transparent hover:bg-brand-n2 md:mx-auto mr-2 md:mb-2 opacity-50 hover:opacity-100" href="/static/rhan-cv-march2020.pdf" rel="noopener noreferrer" target="_blank">
+              <a title="Download CV" class="flex self-center rounded-full w-8 h-8 transition duration-300 ease-out bg-transparent hover:bg-brand-n2 md:mx-auto mr-2 md:mb-2 opacity-50 hover:opacity-100" href="/rhan-cv-march2020.pdf" target="_blank">
                   <unicon class="flex-1 self-center" width="20" height="20" name="file-download-alt" :fill="$static.metadata.brandColors.layoutW1" ></unicon>
               </a>
               <a title="Linkedin Profile" class="flex self-center rounded-full w-8 h-8 transition duration-300 ease-out bg-transparent hover:bg-brand-n2 md:mx-auto mr-2 md:mb-2 opacity-50 hover:opacity-100" href="https://www.linkedin.com/in/rhanmiano" rel="noopener noreferrer" target="_blank">

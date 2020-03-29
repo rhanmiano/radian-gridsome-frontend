@@ -113,6 +113,16 @@ export default function (Vue, { router, head, isClient }) {
       uniExternalLinkAlt
     } = require('vue-unicons/src/icons')
 
+    const { 
+      customAngular,
+      customWordpress,
+      customJs,
+      customNode,
+      customPhp,
+      customVue,
+      customReact
+    } = require('./custom-icons')
+
     Unicon.add([
       uniArrowLeft,
       uniArrowRight, 
@@ -122,12 +132,28 @@ export default function (Vue, { router, head, isClient }) {
       uniCommentImage,
       uniMonitorHeartRate,
       uniRedo,
-      uniExternalLinkAlt
+      uniExternalLinkAlt,
+      customAngular,
+      customWordpress,
+      customJs,
+      customNode,
+      customPhp,
+      customVue,
+      customReact
     ])
 
     Vue.use(Unicon)
 
   }
   
+  head.script.push({
+    src: 'https://www.googletagmanager.com/gtag/js?id=UA-130182876-1',
+    async: true
+  })
+
+  head.script.push({
+    innerHTML: "window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-130182876-1');"
+  })
+
   head.meta.push(...meta);
 }

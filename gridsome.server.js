@@ -6,21 +6,29 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 const axios = require('axios')
 const slugify = require('slugify')
+const fs = require("fs")
+const https = require("https")
+const httpsAgent = new https.Agent({
+  rejectUnauthorized: false
+})
 
 module.exports = function (api) {
   api.loadSource(async ({addCollection, store}) => {
     // Use the Data Store API here: https://gridsome.org/docs/data-store-api/
 
     const {data: projects} = await axios.get(
-      `${process.env.GRIDSOME_RESOURCE_URL}/projects`
+      `${process.env.GRIDSOME_RESOURCE_URL}/projects`,
+      {httpsAgent}
     )
 
     const {data: categories} = await axios.get(
-      `${process.env.GRIDSOME_RESOURCE_URL}/categories`
+      `${process.env.GRIDSOME_RESOURCE_URL}/categories`,
+      {httpsAgent}
     ) 
 
     const {data: tags} = await axios.get(
-      `${process.env.GRIDSOME_RESOURCE_URL}/project_tags`
+      `${process.env.GRIDSOME_RESOURCE_URL}/project_tags`,
+      {httpsAgent}
     )
     
     const projectCollection = addCollection({
@@ -61,6 +69,7 @@ module.exports = function (api) {
         category: store.createReference('Categories', project.category_id),
         description: project.description,
         short_description: project.short_description,
+        tech: project.tech,
         img_url: project.img_url ? project.img_url : '#',
         project_url: project.project_url ? project.project_url : '#',
         hearts: project.hearts,
@@ -94,6 +103,7 @@ module.exports = function (api) {
             },
             description,
             short_description,
+            tech,
             img_url,
             project_url,
             date_from,
@@ -114,6 +124,7 @@ module.exports = function (api) {
           category: node.category,
           description: node.description,
           short_description: node.short_description,
+          tech: node.tech,
           img_url: node.img_url,
           project_url: node.project_url,
           date_from: node.date_from,
