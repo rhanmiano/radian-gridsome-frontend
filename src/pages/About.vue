@@ -7,7 +7,7 @@
             <div class="w-full md:w-8/12 text-layout-b2">
               <h1 class="title decor mt-0">Kumusta!</h1>
             
-              <p class="text-xl text-layout-b1">Hi, I am Rhan. I'm currently working as a Software Engineer for <a class="external-link" href="https://cloudpanda.ph/" target="blank" rel="noopener noreferrer">Cloud Panda PH Inc.</a> — a tech startup in BGC, Taguig.</p>
+              <p class="text-xl text-layout-b1">Hi, I am Rhan. I'm currently working as a Software Engineer for a tech startup in BGC, Taguig.</p>
 
               <figure class="w-full my-8">
                 <svg class="mx-auto w-1/2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 425.055 270">
@@ -19,13 +19,14 @@
               <h3 class="title decor mt-12">Current Stack</h3>
               <p>There's a plethora of technologies available nowadays. For growing developers like myself, it's overwhelming to choose which languages and/or frameworks should I stick with.</p>
               <br>
-              <p>At work, we use Codeigniter 3 to create custom Web Applications and CMS'es, and React/React Native to build Mobile Apps. And we're gently transitioning to other modern and viable frameworks such as Django, React, Angular.</p>
+              <p>At work, we use Codeigniter 3 to create custom Web Applications and CMS'es. And we're gently transitioning to other modern and viable frameworks such as Django, React or Angular.</p>
               <br>
-              <p>For personal projects, I love playing with VueJS and other on-top-of-vue related frameworks. I am also a fan of SlimPHP and Express for the back-end side. I would also like to relearn Python and use it for future projects.</p>
+              <p>On the other hand, I prefer Vue as my javascript framework of choice. I also check other on-top-of-vue related projects out, such as the likes of Gridsome (a static site generator for Vue), in which this site is made of. I use either SlimPHP or Express to power up the back-end side of my personal projects.</p>
               <br>
-              <p>For full details of techs that I have been learning, kindly check out my CV.</p>
+              <p>Currently, I am into learning the ins of GraphQL and some basic DevOps related tasks.</p>
+              <br>
               <h3 class="title decor">People I follow</h3>
-              <p>A list of people I look up to and follow for inspirations and web dev tutorials.</p>
+              <p>A list of people I look up to for inspirations and web dev tutorials.</p>
               <ul class="ml-4 mt-4 text-sm">
                 <li><a class="external-link" href="https://acezoncay.me/" target="blank" rel="noopener noreferrer">Acezon Cay</a> — former high school classmate, and now a successful Software Developer. He's the reason why I took up my course in college.</li>
                 <li><a class="external-link" href="https://acezoncay.me/" target="blank" rel="noopener noreferrer">James Vibar</a> — a designer/developer colleague, he creates wonderful experiences driven with his passion in Web Development.</li>
@@ -35,12 +36,12 @@
                 <li><a class="external-link" href="http://travisneilson.com/" target="blank" rel="noopener noreferrer">Travis Neilson</a> — a designer and developer who also creates funny and creative Youtube tutorials and tips.</li>
               </ul>
 
-              <h3 class="title decor mt-12">Other than being a Developer?</h3>
-              <p>Ahh yes! I'm also into Graphics/UI designing, though I am not that good (laughs).</p>
+              <h3 class="title decor mt-12">Other than being a Developer</h3>
+              <p>Ahh yes! I'm also into Graphics/UI designing.</p>
               <br>
               <p>I'm thinking of becoming a university instructor or a volunteer to some kind of NGO in the future. With this, I can somehow be able to give back to the community.</p>
               <br>
-              <p> I also want to travel to "never been to" places alone.</p>
+              <p> I also want to travel to "never been to" places soon.</p>
             </div>
             <div class="w-full md:w-4/12">
             </div>

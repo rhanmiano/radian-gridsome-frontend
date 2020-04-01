@@ -82,7 +82,6 @@ module.exports = function (api) {
         is_deleted: project.is_deleted
       })
     }
-
   })
 
   api.createPages(async ({ graphql, createPage }) => {

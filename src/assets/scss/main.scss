@@ -31,6 +31,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
     margin: 1.5rem 0;
     font-family: theme('fontFamily.glegoo');
+    @apply leading-tight;
     &:not(:first-child) {
         margin: 1.5rem 0;
     }
@@ -66,7 +67,7 @@ h2,h3,h4 {
 }
 
 .external-link {
-    @apply text-brand-n2 transition duration-200 font-semibold;
+    @apply text-brand-n2 transition duration-200 font-normal;
     text-decoration: underline;
     &:hover {
         @apply text-layout-b1;
