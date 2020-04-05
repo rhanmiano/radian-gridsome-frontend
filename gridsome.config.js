@@ -16,7 +16,7 @@ if (process.env.GRIDSOME_ENV === 'production') postcssPlugins.push(purgecss(requ
 module.exports = {
   siteName: 'Rhan Miano',
   siteUrl: 'https://rhanmiano.me',
-  siteDescription: 'An experienced Web Developer from Taguig, PH',
+  siteDescription: 'Hey there! I\'m Rhan Miano, an aspiring Web Developer from Taguig, PH',
   metadata: {
     brandColors: {
       'brandP2': '#18D3C5',

@@ -96,8 +96,32 @@ export default {
   mounted() {
 
   },
-  metaInfo: {
-    title: 'Portfolio'
+  metaInfo() {
+    return {
+      title: this.$context.name,
+      meta: [
+        {
+          key: 'description',
+          name: 'description',
+          content: this.$context.short_description
+        },
+        {
+          key: 'og:url',
+          name: 'og:url',
+          content: this.$context.project_url
+        },
+        {
+          key: 'og:title',
+          name: 'og:title',
+          content: this.$context.name
+        },
+        {
+          key: 'og:description',
+          name: 'og:description',
+          content: this.$context.short_description
+        }
+      ]
+    }
   },
 }
 </script>

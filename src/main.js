@@ -13,9 +13,9 @@ const meta = [
     content: 'Rhan Miano'
   },
   {
-    key: 'decription',
-    name: 'decription',
-    content: 'Aspiring Web Developer from Taguig, PH'
+    key: 'description',
+    name: 'description',
+    content: 'Hey there! I\'m Rhan Miano, an aspiring Web Developer from Taguig, PH'
   },
   {
     key: 'keywords',
@@ -40,7 +40,7 @@ const meta = [
   {
     key: 'og:description',
     name: 'og:description',
-    content: 'Aspiring Web Developer from Taguig, PH'
+    content: 'Hey there! I\'m Rhan Miano, an aspiring Web Developer from Taguig, PH'
   },
   {
     key: 'og:site_name',
