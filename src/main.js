@@ -24,47 +24,47 @@ const meta = [
   },
   {
     key: 'og:type',
-    name: 'og:type',
+    property: 'og:type',
     content: 'website'
   },
   {
     key: 'og:url',
-    name: 'og:url',
+    property: 'og:url',
     content: 'https://rhanmiano.me'
   },
   {
     key: 'og:title',
-    name: 'og:title',
+    property: 'og:title',
     content: 'Rhan Miano'
   },
   {
     key: 'og:description',
-    name: 'og:description',
+    property: 'og:description',
     content: 'Hey there! I\'m Rhan Miano, an aspiring Web Developer from Taguig, PH'
   },
   {
     key: 'og:site_name',
-    name: 'og:site_name',
+    property: 'og:site_name',
     content: 'Rhan Miano - Web Developer'
   },
   {
     key: 'og:locale',
-    name: 'og:locale',
+    property: 'og:locale',
     content: 'en_US'
   },
   {
     key: 'og:image',
-    name: 'og:image',
+    property: 'og:image',
     content: 'https://rhanmiano.me/assets/static/radian-og-banner.png'
   },
   {
     key: 'og:image:width',
-    name: 'og:image:width',
+    property: 'og:image:width',
     content: '776'
   },
   {
     key: 'og:site_name',
-    name: 'og:site_name',
+    property: 'og:site_name',
     content: '338'
   }
 ]

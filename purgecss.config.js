@@ -6,6 +6,7 @@ module.exports = {
         './src/**/*.html',
         './src/**/*.pug',
         './src/**/*.md',
+        './node_modules/vue-spinner/src/ClipLoader.vue'
     ],
     whitelist: [
         'body',
