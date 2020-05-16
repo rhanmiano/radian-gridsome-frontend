@@ -81,6 +81,8 @@ module.exports = function (api) {
         is_shown: project.is_shown,
         is_deleted: project.is_deleted
       })
+
+      console.log(project);
     }
   })
 

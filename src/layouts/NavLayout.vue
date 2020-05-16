@@ -1,8 +1,8 @@
 <template>
-  <div class="md:h-screen overflow-y-auto">
+  <div class="md:h-screen overflow-y-auto md:ml-auto md:w-8/12">
     <header class="w-full bg-transparent p-5 text-xs">
-      <nav class="font-glegoo" :class="navInfo.linkColor">
-        <g-link v-if="navInfo.prev.hasPrev" class="flex content-baseline float-left md:ml-16" :to="navInfo.prev.linksTo">
+      <nav class="font-avenir" :class="navInfo.linkColor">
+        <g-link v-if="navInfo.prev.hasPrev" class="flex content-baseline float-left" :to="navInfo.prev.linksTo">
           <unicon class="mr-1 self-center" name="arrow-left" :fill="navInfo.iconColor"></unicon>
           <span class="text-right"> {{navInfo.prev.linkText}} </span> 
         </g-link>

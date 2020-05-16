@@ -30,7 +30,8 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     margin: 1.5rem 0;
-    font-family: theme('fontFamily.glegoo');
+    font-family: theme('fontFamily.avenir-roman');
+    font-weight: 500;
     @apply leading-tight;
     &:not(:first-child) {
         margin: 1.5rem 0;

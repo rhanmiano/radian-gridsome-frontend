@@ -7,7 +7,7 @@
             <unicon class="mx-auto self-center transition duration-300 ease-out opacity-25 hover:opacity-50" name="external-link-alt" :fill="$static.metadata.brandColors.layoutB1"></unicon>
           </g-link>
         </div>
-        <div class="ml-2 flex-grow self-center"><p class="m-0 font-glegoo">{{name}}</p></div>
+        <div class="ml-2 flex-grow self-center"><p class="m-0 font-avenir-medium leading-tight font-medium">{{name}}</p></div>
         <div class="flex-none self-center text-layout-b1"><p>{{language}}</p></div>
       </div>
     </section>
@@ -17,7 +17,7 @@
         v-for="ref in refs"
         :key="ref.node.name"
       >
-          <p class="font-glegoo py-2 text-xxs font-semibold">On branch '{{ref.node.name}}'</p>
+          <p class="font-avenir-medium py-2 text-xxs font-semibold">On branch '{{ref.node.name}}'</p>
           <ul class="px-1">
               <li 
                 class="border-b last:border-b-0 flex py-2 leading-snug text-xs"

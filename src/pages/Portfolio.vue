@@ -1,13 +1,13 @@
 <template>
-    <SideNavLayout>
+    <SideNavLayout :navActiveInfo="2">
       <NavLayout :navInfo="navInfo">
       <main class="">
-        <div class="container h-full w-full pt-12">
-          <div class="w-full px-8 md:pl-24">
+        <div class="container h-full w-full pt-12 mt-12 md:mt-0">
+          <div class="w-full block px-12">
             <div class="w-full lg:w-8/12">
               <h1 class="decor mt-0">Portfolio</h1>
               
-              <p class="text-xl text-layout-b1">A showcase of selected projects from the moment I was just starting to love the web, up until "woah, what was I doing back then".</p>
+              <p class="text-xl text-layout-b1">A showcase of selected projects from the moment I was just starting to love the web.</p>
 
               <figure class="w-full my-8">
                 <svg class="mx-auto w-1/2" xmlns="http://www.w3.org/2000/svg"viewBox="0 0 332.521 269.6">
@@ -41,10 +41,14 @@
 
 <page-query>
   query Projects {
-    projects: allProjects(filter: {
-      is_shown: {eq: 1}, 
-      is_deleted:{eq: 0}
-    }) { 
+    projects: allProjects(
+      filter: {
+        is_shown: {eq: 1}, 
+        is_deleted:{eq: 0}
+      },
+      sort: [{ by: "date_from" }, { by: "date_end" }],
+      order: DESC
+    ) { 
       edges {
         node {
           id, 

@@ -1,13 +1,13 @@
 <template>
-  <SideNavLayout>
+  <SideNavLayout  :navActiveInfo="3">
     <NavLayout :navInfo="navInfo">
       <main class="">
-        <div class="container h-full w-full pt-12">
-          <div class="w-full block md:flex px-8 md:pl-24">
-            <div class="w-full md:w-8/12">
+        <div class="container h-full w-full pt-12 mt-12 md:mt-0">
+          <div class="w-full block md:flex px-12">
+            <div class="w-full lg:w-8/12">
               <h1 class="decor text-layout-b2 mt-0">Feed</h1>
             
-              <p class="text-xl text-layout-b1">Sharing this unexhaustive list of activities with or without relation to development.</p>
+              <p class="text-xl text-layout-b1">Sharing this feed that talks a lot about myself, the things I usually do in my spare time.</p>
 
               <div class="mt-8">
                 <tabs

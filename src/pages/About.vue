@@ -1,10 +1,10 @@
 <template>
-    <SideNavLayout>
+    <SideNavLayout :navActiveInfo="1">
       <NavLayout :navInfo="navInfo">
-      <main class="">
-        <div class="container h-full w-full pt-12">
-          <div class="w-full block md:flex px-8 md:pl-24">
-            <div class="w-full md:w-8/12 text-layout-b2">
+      <main class="relative">
+        <div class="container h-full w-full pt-12 mt-12 md:mt-0">
+          <div class="w-full block md:flex px-12">
+            <div class="w-full lg:w-8/12 text-layout-b2">
               <h1 class="title decor mt-0">Kumusta!</h1>
             
               <p class="text-xl text-layout-b1">Hi, I am Rhan. I'm currently working as a Software Engineer for a tech startup in BGC, Taguig.</p>
@@ -29,7 +29,7 @@
               <p>A list of people I look up to for inspirations and web dev tutorials.</p>
               <ul class="ml-4 mt-4 text-sm">
                 <li><a class="external-link" href="https://acezoncay.me/" target="blank" rel="noopener noreferrer">Acezon Cay</a> — former high school classmate, and now a successful Software Developer. He's the reason why I took up my course in college.</li>
-                <li><a class="external-link" href="https://acezoncay.me/" target="blank" rel="noopener noreferrer">James Vibar</a> — a designer/developer colleague, he creates wonderful experiences driven with his passion in Web Development.</li>
+                <li><a class="external-link" href="https://ph.linkedin.com/in/james-raphael-vibar-a0842516a" target="blank" rel="noopener noreferrer">James Vibar</a> — a designer/developer colleague, he creates wonderful experiences driven with his passion in Web Development.</li>
                 <li><a class="external-link" href="https://ricostacruz.com/" target="blank" rel="noopener noreferrer">Rico Sta. Cruz</a> — a filipino programmer. Was amazed how he has contributed to open source community.</li>
                 <li><a class="external-link" href="https://www.taniarascia.com/" target="blank" rel="noopener noreferrer">Tania Rascia</a> — this section was inspired by hers. She creates tutorials of all her learnings since the day she career shifted into Web Development.</li>
                 <li><a class="external-link" href="https://www.traversymedia.com/" target="blank" rel="noopener noreferrer">Brad Traversy</a> — who doesn't know who this guy is? Such amazing and helpful contents right on his Youtube channel.</li>

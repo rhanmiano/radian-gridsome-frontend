@@ -15,12 +15,12 @@ const meta = [
   {
     key: 'description',
     name: 'description',
-    content: 'Hey there! I\'m Rhan Miano, an aspiring Web Developer from Taguig, PH'
+    content: 'I design and develop wonderful experiences on the web. I work as a fulltime Software Engineer. I can do freelance work as well.'
   },
   {
     key: 'keywords',
     name: 'keywords',
-    content: 'Web Developer, Software Engineer, Software Developer, Fullstack Developer, Taguig, Philippines'
+    content: 'Web Developer, Software Engineer, Software Developer, Fullstack Developer, Freelance Web Developer, Taguig, Philippines'
   },
   {
     key: 'og:type',
@@ -35,17 +35,17 @@ const meta = [
   {
     key: 'og:title',
     property: 'og:title',
-    content: 'Rhan Miano'
+    content: 'Rhan Miano — Freelance Web Developer'
   },
   {
     key: 'og:description',
     property: 'og:description',
-    content: 'Hey there! I\'m Rhan Miano, an aspiring Web Developer from Taguig, PH'
+    content: 'I design and develop wonderful experiences on the web. I work as a fulltime Software Engineer. I can do freelance work as well.'
   },
   {
     key: 'og:site_name',
     property: 'og:site_name',
-    content: 'Rhan Miano - Web Developer'
+    content: 'Rhan Miano — Freelance Web Developer'
   },
   {
     key: 'og:locale',
@@ -55,7 +55,7 @@ const meta = [
   {
     key: 'og:image',
     property: 'og:image',
-    content: 'https://rhanmiano.me/assets/static/radian-og-banner.png'
+    content: 'https://rhanmiano.me/radian-og-banner.png'
   },
   {
     key: 'og:image:width',
@@ -63,8 +63,8 @@ const meta = [
     content: '776'
   },
   {
-    key: 'og:site_name',
-    property: 'og:site_name',
+    key: 'og:image:height',
+    property: 'og:image:height',
     content: '338'
   }
 ]
@@ -110,7 +110,12 @@ export default function (Vue, { router, head, isClient }) {
       uniCommentImage,
       uniMonitorHeartRate,
       uniRedo,
-      uniExternalLinkAlt
+      uniExternalLinkAlt,
+      uniEnvelopeHeart,
+      uniHomeAlt,
+      uniArrow,
+      uniWindow,
+      uniHeartAlt
     } = require('vue-unicons/src/icons')
 
     const { 
@@ -133,6 +138,11 @@ export default function (Vue, { router, head, isClient }) {
       uniMonitorHeartRate,
       uniRedo,
       uniExternalLinkAlt,
+      uniEnvelopeHeart,
+      uniHomeAlt,
+      uniArrow,
+      uniWindow,
+      uniHeartAlt,
       customAngular,
       customWordpress,
       customJs,

@@ -11,12 +11,12 @@ const postcssPlugins = [
   tailwind(),
 ]
 
-if (process.env.GRIDSOME_ENV === 'production') postcssPlugins.push(purgecss(require('./purgecss.config.js')))
+// if (process.env.GRIDSOME_ENV === 'production') postcssPlugins.push(purgecss(require('./purgecss.config.js')))
 
 module.exports = {
-  siteName: 'Rhan Miano',
+  siteName: 'Rhan Miano — Freelance Web Developer',
   siteUrl: 'https://rhanmiano.me',
-  siteDescription: 'Hey there! I\'m Rhan Miano, an aspiring Web Developer from Taguig, PH',
+  siteDescription: 'I design and develop wonderful experiences on the web. I work as a fulltime Software Engineer. I can do freelance work as well.',
   metadata: {
     brandColors: {
       'brandP2': '#18D3C5',
@@ -44,5 +44,6 @@ module.exports = {
         plugins: postcssPlugins,
       }
     }
-  }
+  },
+  outputDir: '../rhanmiano.me'
 }

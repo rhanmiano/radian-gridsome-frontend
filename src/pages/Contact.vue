@@ -1,12 +1,12 @@
 <template>
   <ClientOnly>
-  <SideNavLayout>
+  <SideNavLayout :navActiveInfo="4">
     <NavLayout :navInfo="navInfo">
-      <main class="">
-        <FlashMessage></FlashMessage>
-        <div class="container h-full w-full pt-12">
-          <div class="w-full block md:flex px-8 md:pl-24">
-            <div class="w-full md:w-8/12">
+      <main class="relative">
+        <FlashMessage :position="'right top'"></FlashMessage>
+        <div class="container h-full w-full pt-12 mt-12 md:mt-0">
+          <div class="w-full block md:flex px-12">
+            <div class="w-full lg:w-8/12">
               <h1 class="decor text-layout-b2 mt-0">Got some awesome idea?</h1>
             
               <p class="text-xl text-layout-b1">Please feel free to reach out. I'm up for new challenges!</p>
@@ -231,7 +231,7 @@ export default {
           status: 'success',
           title: 'Success!',
           message: 'Thank you, your message has been sent to Rhan.',
-          position: 'bottom-right',
+          // position: 'top-right',
           blockClass: 'msg-block',
           contentClass: 'msg-content'
         })
@@ -249,7 +249,7 @@ export default {
           status: 'warning',
           title: 'Oops!',
           message: 'Kindly check for field errors',
-          position: 'bottom-right',
+          position: 'top-right',
           blockClass: 'msg-block',
           contentClass: 'msg-content'
         })

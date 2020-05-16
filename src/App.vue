@@ -36,6 +36,27 @@ export default {
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Avenir'; // light
+    src: url('./assets/fonts/AvenirLTStd-Book.otf') format('otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Avenir Roman'; // light
+    src: url('./assets/fonts/AvenirLTStd-Roman.otf') format('otf');
+    font-weight: bolder;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Avenir Medium'; // light
+    src: url('./assets/fonts/AvenirLTStd-Medium.otf') format('otf');
+    font-weight: bolder;
+    font-style: normal;
+}
+
 /* Tabs */
 .tab-content {
   min-height: 500px;
@@ -81,16 +102,6 @@ export default {
     @apply bg-brand;
     transition: transform 0.4s ease, width 0.4s ease;
   }
-}
-
-.fade-enter-active {
-  transition: opacity 400ms ease-in-out;
-}
-
-.fade-enter {
-  opacity: 0;
-  position: relative;
-  left: -10px;
 }
 
 .msg-block {
