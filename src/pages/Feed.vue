@@ -7,7 +7,7 @@
             <div class="w-full lg:w-8/12">
               <h1 class="decor text-layout-b2 mt-0">Feed</h1>
             
-              <p class="text-xl text-layout-b1">Sharing this feed that talks a lot about myself, the things I usually do in my spare time.</p>
+              <p class="kicker">Sharing this feed that talks a lot about myself, the things I usually do in my spare time.</p>
 
               <div class="mt-8">
                 <tabs

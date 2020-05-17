@@ -9,7 +9,7 @@
             <div class="w-full lg:w-8/12">
               <h1 class="decor text-layout-b2 mt-0">Got some awesome idea?</h1>
             
-              <p class="text-xl text-layout-b1">Please feel free to reach out. I'm up for new challenges!</p>
+              <p class="kicker">Please feel free to reach out. I'm up for new challenges!</p>
 
               <figure class="w-full my-8">
                 <svg class="mx-auto w-1/2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 307.902 270">

@@ -135,4 +135,20 @@ export default {
     @apply border-none #{!important};
 }
 
+// Social Media Icons
+.social-icons {
+  @apply flex self-center rounded-full w-8 h-8 transition duration-300 ease-out bg-transparent mr-2 opacity-50;
+
+  &:hover {
+    @apply bg-brand-n2 opacity-100;
+  }
+
+  @screen md {
+    @apply mx-auto mb-2;
+  }
+}
+
+.wrap-animate {
+  opacity: 0;
+}
 </style>

@@ -11,7 +11,7 @@ const postcssPlugins = [
   tailwind(),
 ]
 
-// if (process.env.GRIDSOME_ENV === 'production') postcssPlugins.push(purgecss(require('./purgecss.config.js')))
+if (process.env.GRIDSOME_ENV === 'production') postcssPlugins.push(purgecss(require('./purgecss.config.js')))
 
 module.exports = {
   siteName: 'Rhan Miano — Freelance Web Developer',
@@ -45,5 +45,5 @@ module.exports = {
       }
     }
   },
-  outputDir: '../rhanmiano.me'
+  outputDir: '../rhanmiano.mebuild'
 }

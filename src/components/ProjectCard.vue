@@ -6,7 +6,7 @@
           <unicon class="mx-auto self-center" :name="`custom-${tech}`" :fill="$static.metadata.brandColors.layoutW1"></unicon>
         </div>
         <div class="flex flex-grow self-center w-full">
-          <div class="sm:w-1/3 self-center text-sm md:text-xs leading-tight font-glegoo">
+          <div class="sm:w-1/3 self-center text-sm md:text-xs leading-tight font-avenir">
             <strong class="project-title font-bold">{{name}}</strong> <br>
           </div>
           <div class="hidden sm:flex sm:w-2/3  flex-grow self-center">

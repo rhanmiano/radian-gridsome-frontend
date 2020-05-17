@@ -8,6 +8,8 @@ const axios = require('axios')
 const slugify = require('slugify')
 const fs = require("fs")
 const https = require("https")
+const path = require('path');
+
 const httpsAgent = new https.Agent({
   rejectUnauthorized: false
 })
@@ -81,8 +83,6 @@ module.exports = function (api) {
         is_shown: project.is_shown,
         is_deleted: project.is_deleted
       })
-
-      console.log(project);
     }
   })
 
@@ -133,5 +133,13 @@ module.exports = function (api) {
         }
       })
     })
+  })
+
+  api.configureWebpack({
+    resolve: {
+      alias: {
+        "gsap-umd": path.resolve('node_modules', 'gsap/dist/gsap'),
+      }
+    },
   })
 }

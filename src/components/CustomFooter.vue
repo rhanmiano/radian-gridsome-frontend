@@ -1,5 +1,5 @@
 <template>
-  <footer class="my-6 text-center text-xs text-brand md:pl-24 mt-24">
+  <footer class="my-6 text-center text-xs text-brand mt-24">
     <p> Rhan Miano - Web Developer &copy; 2019 - <span>{{today}}</span> </p>
     <ul class="sitemap">
       <li><g-link to="/">Home</g-link></li>

@@ -2,6 +2,7 @@
   <div class="relative">
       <div class="sidenav-wrapper bg-brand fixed md:absolute md:left-0 md:h-screen w-full md:w-4/12 z-50">
         <nav class="text-layout-w1 h-full flex flex-wrap justify-between md:content-center px-4 md:px-8 py-1 md:py-4">
+          <div class="wrap-animate" ref="wrapAnimate">
             <g-link class="flex content-center md:w-full md:justify-center md:mb-6" to="/">
               <figure class="flex content-center md:w-full md:block" ref="homeLogo">
                   <svg class="my-auto" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="55" height="55" viewBox="0 0 55 55"><defs><filter id="a" x="0" y="0" width="55" height="55" filterUnits="userSpaceOnUse"><feOffset dy="3" input="SourceAlpha"/><feGaussianBlur stdDeviation="2.5" result="b"/><feFlood flood-opacity="0.2"/><feComposite operator="in" in2="b"/><feComposite in="SourceGraphic"/></filter></defs><g transform="translate(-460.5 -55.5)"><g transform="matrix(1, 0, 0, 1, 460.5, 55.5)" filter="url(#a)"><path d="M20,0A20,20,0,1,1,0,20,20,20,0,0,1,20,0Z" transform="translate(7.5 4.5)" fill="#fff"/></g><g transform="translate(477.746 68.722)"><path d="M0,22.672V0H20.591V13.015H14.423V6.183H6.183V22.672Zm7.553-4.84V7.557h5.48V17.832Z" fill="#2e2e2e"/></g></g></svg>
@@ -34,8 +35,9 @@
                     <unicon class="flex justify-center flex-1 self-center" width="20" height="20" name="github-alt" :fill="$static.metadata.brandColors.layoutW1"></unicon>
                 </a>
               </div>
+          </div>
         </nav>
-        <nav class="bg-layout-b2 w-full block md:hidden overflow-hidden py-2">
+        <nav class="bg-layout-b2 w-full block md:hidden overflow-hidden py-3">
           <div class="md:block navlist" ref="navlist2">
             <ul class="flex">
               <li class="navlist-icon" :class="{'navlist-icon-active': index == navActiveInfo}" v-for="(nav, index) in navs" :key="index"><g-link :to="nav.link"><unicon class="flex justify-center flex-1 self-center" width="15" height="15" :name="nav.icon" :fill="$static.metadata.brandColors.layoutW1"></unicon></g-link></li>
@@ -43,8 +45,10 @@
           </div>
         </nav>
       </div>
-      <div ref="slot">
-        <slot/>
+      <div class="wrap-animate" ref="wrapAnimate2">
+        <div ref="slot">
+          <slot/>
+        </div>
       </div>
   </div>
 </template>
@@ -62,7 +66,6 @@ query {
 </static-query>
 
 <script>
-import { TimelineLite, Back, Power1} from 'gsap'
 
 export default {
     name: 'SideNavLayout',
@@ -79,10 +82,18 @@ export default {
       }
     },
     mounted() {
-      const { homeLogo, title, kicker1, kicker2, navlist, navlist2, socWrap, slot } = this.$refs
+      if(!process.isClient) return
+      const { TimelineLite, Back, Power1} = require('gsap-umd')
+
+      const { wrapAnimate, wrapAnimate2, homeLogo, title, kicker1, kicker2, navlist, navlist2, socWrap, slot } = this.$refs
       const timeline = new TimelineLite()
 
-      timeline.from([homeLogo,title,kicker1,navlist,navlist2,kicker2,socWrap,], 0.6, {
+      // Side Nav
+      timeline.to(wrapAnimate, 0.1, {
+        opacity: 1,
+        ease: Back.easeIn
+      })
+      .from([homeLogo,title,kicker1,navlist,navlist2,kicker2,socWrap,], 0.6, {
         opacity: 0,
         x: 10,
         stagger: {
@@ -90,6 +101,12 @@ export default {
           ease: Power1.EaseIn
         },
         ease: Back.easeInOut,
+      })
+
+      // Main Section
+      timeline.to(wrapAnimate2, 0.1, {
+        opacity: 1,
+        ease: Back.easeIn
       })
       .from(slot, 0.2, {
         opacity: 0,

@@ -7,7 +7,7 @@
             <div class="w-full lg:w-8/12 text-layout-b2">
               <h1 class="title decor mt-0">Kumusta!</h1>
             
-              <p class="text-xl text-layout-b1">Hi, I am Rhan. I'm currently working as a Software Engineer for a tech startup in BGC, Taguig.</p>
+              <p class="kicker">Hi, I am Rhan. I'm currently working as a Software Engineer for a tech startup in BGC, Taguig.</p>
 
               <figure class="w-full my-8">
                 <svg class="mx-auto w-1/2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 425.055 270">
@@ -93,6 +93,6 @@ export default {
 
 <style lang="scss" scoped>
 p {
-  @apply text-layout-b1;
+  @apply text-justify;
 }
 </style>

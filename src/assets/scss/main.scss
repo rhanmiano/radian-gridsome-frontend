@@ -75,6 +75,11 @@ h2,h3,h4 {
     }
 }
 
+.kicker {
+    @apply text-xl;
+    text-align: left !important;
+}
+
 @media (min-width: 992px) {
     html, body {
         font-size: calc(#{$base-size}px + (#{$max-size} - #{$base-size}) * ((100vw - #{$from}px) / (#{$to} - #{$from})));
