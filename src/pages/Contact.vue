@@ -1,9 +1,7 @@
 <template>
-  <ClientOnly>
   <SideNavLayout :navActiveInfo="4">
     <NavLayout :navInfo="navInfo">
       <main class="relative">
-        <FlashMessage :position="'right top'"></FlashMessage>
         <div class="container h-full w-full pt-12 mt-12 md:mt-0">
           <div class="w-full block md:flex px-12">
             <div class="w-full lg:w-8/12">
@@ -103,7 +101,6 @@
       </main>
     </NavLayout>
   </SideNavLayout>
-  </ClientOnly>
 </template>
 
 <static-query>
@@ -226,15 +223,6 @@ export default {
       if (data.success) {
         this.clearFormErrors()
         this.resetForm()
-
-        this.flashMessage.show({
-          status: 'success',
-          title: 'Success!',
-          message: 'Thank you, your message has been sent to Rhan.',
-          // position: 'top-right',
-          blockClass: 'msg-block',
-          contentClass: 'msg-content'
-        })
       } else {
         if (typeof(data.errors) !== 'string') {
           for (const item in data.errors) {
@@ -244,15 +232,6 @@ export default {
             }
           }
         }
-
-        this.flashMessage.show({
-          status: 'warning',
-          title: 'Oops!',
-          message: 'Kindly check for field errors',
-          position: 'top-right',
-          blockClass: 'msg-block',
-          contentClass: 'msg-content'
-        })
       }
     }
   },

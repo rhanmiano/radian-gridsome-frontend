@@ -91,15 +91,6 @@ export default function (Vue, { router, head, isClient }) {
   })
 
   if (isClient) {
-    const FlashMessage = require('@smartweb/vue-flash-message').default
-
-    Vue.use(FlashMessage, {
-      name: 'flashMessage',
-      tag: 'FlashMessage',
-      time: 3000,
-      strategy: 'single'
-    })
-
     const Unicon = require('vue-unicons').default
     const { 
       uniArrowLeft,

@@ -7,7 +7,7 @@
         </figure>
 
         <div class="text-layout-w1 text-center leading-tight">
-          <h1 class="title" ref="title">Hey there! <br class="block md:hidden">I'm Rhan Miano.</h1>
+          <h1 class="title font-glegoo-bold" ref="title">Hey there! <br class="block md:hidden">I'm Rhan Miano.</h1>
           <h4 class="subtitle" ref="subtitle">I design and develop wonderful experiences on the web. <br class="hidden md:block">I work as a fulltime Software Engineer.
           </h4>
         </div>

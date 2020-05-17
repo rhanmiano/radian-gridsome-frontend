@@ -38,7 +38,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     &.decor {
-        // font-family: theme('fontFamily.glegoo-bold');
+        font-family: theme('fontFamily.glegoo-bold');
         color: theme('colors.layout-b2');
 
         &::after {
