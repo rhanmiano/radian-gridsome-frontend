@@ -29,7 +29,7 @@
                 ></div>
               </div>
             </div>
-            <div class="w-full md:w-4/12 md:pl-8 pt-4">
+            <div class="w-full md:w-3/12 md:pl-8 pt-4">
               <a
                 class="text-center block w-full bg-white hover:bg-brand text-brand hover:text-layout-w1 rounded px-6 py-2 transition duration-300 ease-out border focus:outline-none"
                 :href="$context.project_url"

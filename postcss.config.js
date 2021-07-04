@@ -21,6 +21,8 @@ module.exports = {
         require('autoprefixer'),
         ...process.env.GRIDSOME_ENV === 'production'
         ? [purgecss]
-        : []
+        : [],
+        {use: 'gridsome-plugin-modal'}
+        
     ]
 }

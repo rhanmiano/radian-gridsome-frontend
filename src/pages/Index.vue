@@ -1,7 +1,7 @@
 <template>
   <main class="bg-brand h-screen overflow-hidden relative">
     <div
-      class="container relative h-full w-full md:w-10/12 lg:w-8/12 flex flex-wrap justify-center content-center px-4 md:px-8 lg:px-16"
+      class="container relative h-full w-full md:w-10/12 lg:w-9/12 flex flex-wrap justify-center content-center px-4 md:px-8 lg:px-16"
     >
       <div
         v-if="loading"

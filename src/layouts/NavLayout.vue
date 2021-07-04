@@ -1,5 +1,5 @@
 <template>
-  <div class="md:h-screen overflow-y-auto md:ml-auto md:w-9/12">
+  <div class="md:h-screen overflow-y-auto md:ml-auto md:w-9/12 relative">
     <header class="w-full bg-transparent p-5 text-xs">
       <nav class="font-avenir" :class="navInfo.linkColor">
         <g-link

@@ -3,6 +3,7 @@
 
 require('./assets/scss/main.scss')
 import VueFilterDateFormat from 'vue-filter-date-format'
+import vmodal from 'vue-js-modal'
 
 import DefaultLayout from '~/App.vue'
 
@@ -91,6 +92,8 @@ export default function (Vue, { router, head, isClient }) {
   })
 
   if (isClient) {
+    Vue.use(vmodal)
+
     const Unicon = require('vue-unicons').default
     const { 
       uniArrowLeft,

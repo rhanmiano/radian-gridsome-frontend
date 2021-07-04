@@ -4,7 +4,7 @@
       <main class="relative">
         <div class="container h-full w-full pt-12 mt-12 md:mt-0">
           <div class="w-full block md:flex px-12">
-            <div class="w-full lg:w-8/12 text-layout-b2">
+            <div class="w-full lg:w-9/12 text-layout-b2">
               <h1 class="title decor mt-0">Kumusta!</h1>
 
               <p class="kicker">
@@ -286,7 +286,14 @@
                 side of my personal projects.
               </p>
               <br />
-              <p>Currently, I am {{ bio.status.message }}.</p>
+              <p>
+                Currently, I am
+                {{
+                  bio.status
+                    ? bio.status.message
+                    : 'working on personal projects'
+                }}.
+              </p>
               <br />
               <h3 class="title decor">People I follow</h3>
               <p>
@@ -385,7 +392,7 @@
               <br />
               <p>I also want to travel to "never been to" places soon.</p>
             </div>
-            <div class="w-full md:w-4/12"></div>
+            <div class="w-full md:w-3/12"></div>
           </div>
           <CustomFooter></CustomFooter>
         </div>
