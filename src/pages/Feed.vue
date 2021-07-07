@@ -307,7 +307,7 @@
         >
           <div v-if="activeRepo && activeRepo.node">
             <div class="repo-meta mb-2">
-              <p class="font-medium">
+              <p class="font-bold">
                 <a
                   :href="activeRepo.node.url"
                   target="_blank"

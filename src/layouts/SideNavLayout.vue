@@ -8,14 +8,8 @@
           class="flex flex-wrap justify-between md:content-center h-full"
           ref="wrapAnimate"
         >
-          <g-link
-            class="flex content-center md:w-full md:justify-center md:mb-6"
-            to="/"
-          >
-            <figure
-              class="flex content-center md:w-full md:block"
-              ref="homeLogo"
-            >
+          <g-link class="flex content-center md:mb-4" to="/">
+            <figure class="flex content-center md:block" ref="homeLogo">
               <svg
                 class="my-auto"
                 xmlns="http://www.w3.org/2000/svg"
