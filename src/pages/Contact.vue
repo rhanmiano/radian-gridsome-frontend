@@ -307,7 +307,16 @@
                     >{{ formErrors.message.error }}</span
                   >
                 </div>
-
+                <p
+                  v-if="formSubmit"
+                  class="pl-2 text-white rounded-sm mt-2"
+                  :class="{
+                    'bg-brand': formSubmit.success,
+                    'bg-denotive-error': !formSubmit.success,
+                  }"
+                >
+                  {{ formSubmit.message }}
+                </p>
                 <div class="block w-full mt-4">
                   <button
                     @click.prevent="sendForm"
@@ -411,6 +420,7 @@ export default {
         linkColor: 'text-brand',
         iconColor: '#11A89D',
       },
+      formSubmit: null,
     }
   },
   methods: {
@@ -432,6 +442,7 @@ export default {
       this.form.category = 0
       this.form.nickname = this.form.email = this.form.contactNo = this.form.message =
         ''
+      this.formSubmit = null
     },
     async sendForm() {
       this.loading = true
@@ -460,6 +471,7 @@ export default {
           }
         }
       }
+      this.formSubmit = data
     },
   },
   mounted() {},

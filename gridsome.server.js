@@ -6,50 +6,50 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 const axios = require('axios')
 const slugify = require('slugify')
-const fs = require("fs")
-const https = require("https")
-const path = require('path');
+const fs = require('fs')
+const https = require('https')
+const path = require('path')
 
 const httpsAgent = new https.Agent({
-  rejectUnauthorized: false
+  rejectUnauthorized: false,
 })
 
-module.exports = function (api) {
-  api.loadSource(async ({addCollection, store}) => {
+module.exports = function(api) {
+  api.loadSource(async ({ addCollection, store }) => {
     // Use the Data Store API here: https://gridsome.org/docs/data-store-api/
 
-    const {data: projects} = await axios.get(
+    const { data: projects } = await axios.get(
       `${process.env.GRIDSOME_RESOURCE_URL}/projects`,
-      {httpsAgent}
+      { httpsAgent }
     )
 
-    const {data: categories} = await axios.get(
+    const { data: categories } = await axios.get(
       `${process.env.GRIDSOME_RESOURCE_URL}/categories`,
-      {httpsAgent}
-    ) 
-
-    const {data: tags} = await axios.get(
-      `${process.env.GRIDSOME_RESOURCE_URL}/project_tags`,
-      {httpsAgent}
+      { httpsAgent }
     )
-    
+
+    const { data: tags } = await axios.get(
+      `${process.env.GRIDSOME_RESOURCE_URL}/project_tags`,
+      { httpsAgent }
+    )
+
     const projectCollection = addCollection({
-      typeName: 'Projects'
+      typeName: 'Projects',
     })
 
     const categoryCollection = addCollection({
-      typeName: 'Categories'
+      typeName: 'Categories',
     })
 
     const projectTagCollection = addCollection({
-      typeName: 'ProjectTags'
+      typeName: 'ProjectTags',
     })
 
     for (const category of categories.categories) {
       categoryCollection.addNode({
         id: category.id,
         category_name: category.name,
-        is_deleted: category.is_deleted
+        is_deleted: category.is_deleted,
       })
     }
 
@@ -58,7 +58,7 @@ module.exports = function (api) {
         id: tag.id,
         project_id: tag.project_id,
         tag_id: tag.tag_id,
-        tag_name: tag.tag_name
+        tag_name: tag.tag_name,
       })
     }
 
@@ -66,7 +66,7 @@ module.exports = function (api) {
       projectCollection.addNode({
         id: project.id,
         name: project.name,
-        slug: slugify(project.name, {lower: true}),
+        slug: slugify(project.name, { lower: true }),
         category_id: project.category_id,
         category: store.createReference('Categories', project.category_id),
         description: project.description,
@@ -81,38 +81,39 @@ module.exports = function (api) {
         date_updated: project.date_updated,
         date_deleted: project.date_deleted,
         is_shown: project.is_shown,
-        is_deleted: project.is_deleted
+        is_deleted: project.is_deleted,
       })
     }
   })
 
   api.createPages(async ({ graphql, createPage }) => {
     // Use the Pages API here: https://gridsome.org/docs/pages-api/
-    const { data: qProjects } = await graphql(`{
-      projects: allProjects(filter: {
-        is_shown: {eq: 1}, 
-        is_deleted:{eq: 0}
-      }) { 
-        edges {
-          node {
-            id,
-            name,
-            slug,
-            category {
-              id,
-              category_name
-            },
-            description,
-            short_description,
-            tech,
-            img_url,
-            project_url,
-            date_from,
-            date_end
+    const { data: qProjects } = await graphql(`
+      {
+        projects: allProjects(
+          filter: { is_shown: { eq: "1" }, is_deleted: { eq: "0" } }
+        ) {
+          edges {
+            node {
+              id
+              name
+              slug
+              category {
+                id
+                category_name
+              }
+              description
+              short_description
+              tech
+              img_url
+              project_url
+              date_from
+              date_end
+            }
           }
         }
       }
-    }`)
+    `)
 
     qProjects.projects.edges.forEach(({ node }) => {
       createPage({
@@ -129,8 +130,8 @@ module.exports = function (api) {
           img_url: node.img_url,
           project_url: node.project_url,
           date_from: node.date_from,
-          date_end: node.date_end
-        }
+          date_end: node.date_end,
+        },
       })
     })
   })
@@ -138,8 +139,8 @@ module.exports = function (api) {
   api.configureWebpack({
     resolve: {
       alias: {
-        "gsap-umd": path.resolve('node_modules', 'gsap/dist/gsap'),
-      }
+        'gsap-umd': path.resolve('node_modules', 'gsap/dist/gsap'),
+      },
     },
   })
 }

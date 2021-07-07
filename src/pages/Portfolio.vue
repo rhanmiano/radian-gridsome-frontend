@@ -285,8 +285,8 @@
   query Projects {
     projects: allProjects(
       filter: {
-        is_shown: {eq: 1}, 
-        is_deleted:{eq: 0}
+        is_shown: {eq: "1"}, 
+        is_deleted:{eq: "0"}
       },
       sort: [{ by: "date_from" }, { by: "date_end" }],
       order: DESC

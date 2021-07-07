@@ -3,9 +3,9 @@
     <NavLayout :navInfo="navInfo">
       <main class="">
         <div class="container h-full w-full pt-12 mt-12 md:mt-0">
-          <div class="w-full block md:flex px-8 md:pl-24">
+          <div class="w-full block md:flex px-8">
             <div class="w-full md:w-9/12">
-              <div class="relative bg-white rounded p-8 shadow-xs">
+              <div class="relative p-8">
                 <!-- <div class="absolute w-full "></div> -->
                 <g-image class="" :src="$context.img_url"></g-image>
                 <p class="leading-tight text-xxs font-avenir-medium">
@@ -16,12 +16,24 @@
                     }}
                     - {{ new Date($context.date_end) | dateFormat('MMM YYYY') }}
                   </span>
+
                   <br />
                 </p>
                 <h1 class="m-0 font-avenir-medium-bold leading-tight">
                   {{ $context.name }}
                 </h1>
-
+                <p class="text-xs font-medium">
+                  {{ $context.short_description }}
+                </p>
+                <p class="text-xs">
+                  <a
+                    class="external-link"
+                    :href="$context.project_url"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >{{ $context.project_url }}</a
+                  >
+                </p>
                 <div
                   class="text-layout-b2 mt-8 font-light text-justify"
                   id="project-description"
@@ -30,14 +42,7 @@
               </div>
             </div>
             <div class="w-full md:w-3/12 md:pl-8 pt-4">
-              <a
-                class="text-center block w-full bg-white hover:bg-brand text-brand hover:text-layout-w1 rounded px-6 py-2 transition duration-300 ease-out border focus:outline-none"
-                :href="$context.project_url"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Project Link/Demo</a
-              >
-              <p class="text-xs my-1">Project Tags:</p>
+              <p class="text-xs my-1">Tags:</p>
               <div class="w-full flex flex-wrap">
                 <span
                   class="leading-none mb-1 bg-brand text-layout-w1 px-2 py-1 rounded-full text-xxs mr-1"
