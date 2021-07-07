@@ -1,35 +1,62 @@
 <template>
   <SideNavLayout :navActiveInfo="2">
     <NavLayout :navInfo="navInfo">
-    <main class="">
-      <div class="container h-full w-full pt-12 mt-12 md:mt-0">
-        <div class="w-full block md:flex px-8 md:pl-24">
-          <div class="w-full md:w-8/12">
-            <div class="relative bg-white rounded p-8 shadow-xs">
-              <!-- <div class="absolute w-full "></div> -->
-              <g-image class="" :src="$context.img_url"></g-image>
-              <p class="leading-tight text-xxs font-avenir-medium">
-                <strong>{{ $context.category.category_name }}</strong> <br>
-                <span class="text-layout-b2">{{new Date($context.date_from) | dateFormat('MMM YYYY')}} - {{new Date($context.date_end) | dateFormat('MMM YYYY')}} </span>
-                <br>
-              </p>
-              <h1 class="m-0 font-avenir-medium-bold leading-tight">{{ $context.name }}</h1>
-              
-              <div class="text-layout-b2 mt-8 font-light text-justify" id="project-description" v-html="htmlDecode($context.description)">
+      <main class="">
+        <div class="container h-full w-full pt-12 mt-12 md:mt-0">
+          <div class="w-full block md:flex px-8">
+            <div class="w-full md:w-9/12">
+              <div class="relative p-8">
+                <!-- <div class="absolute w-full "></div> -->
+                <g-image class="" :src="$context.img_url"></g-image>
+                <p class="leading-tight text-xxs font-avenir-medium">
+                  <strong>{{ $context.category.category_name }}</strong> <br />
+                  <span class="text-layout-b2"
+                    >{{
+                      new Date($context.date_from) | dateFormat('MMM YYYY')
+                    }}
+                    - {{ new Date($context.date_end) | dateFormat('MMM YYYY') }}
+                  </span>
+
+                  <br />
+                </p>
+                <h1 class="m-0 font-avenir-medium-bold leading-tight">
+                  {{ $context.name }}
+                </h1>
+                <p class="text-xs font-medium">
+                  {{ $context.short_description }}
+                </p>
+                <p class="text-xs">
+                  <a
+                    class="external-link"
+                    :href="$context.project_url"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >{{ $context.project_url }}</a
+                  >
+                </p>
+                <div
+                  class="text-layout-b2 mt-8 font-light text-justify"
+                  id="project-description"
+                  v-html="htmlDecode($context.description)"
+                ></div>
+              </div>
+            </div>
+            <div class="w-full md:w-3/12 md:pl-8 pt-4">
+              <p class="text-xs my-1">Tags:</p>
+              <div class="w-full flex flex-wrap">
+                <span
+                  class="leading-none mb-1 bg-brand text-layout-w1 px-2 py-1 rounded-full text-xxs mr-1"
+                  v-for="edge in $page.projectTags.edges"
+                  :key="edge.node.id"
+                >
+                  {{ edge.node.tag_name }}
+                </span>
               </div>
             </div>
           </div>
-          <div class="w-full md:w-4/12 md:pl-8 pt-4">
-            <a class="text-center block w-full bg-white hover:bg-brand text-brand hover:text-layout-w1 rounded px-6 py-2 transition duration-300 ease-out border focus:outline-none" :href="$context.project_url" target="_blank" rel="noopener noreferrer">Project Link/Demo</a>
-            <p class="text-xs my-1">Project Tags:</p>
-            <div class="w-full flex flex-wrap">
-              <span class="leading-none mb-1 bg-brand text-layout-w1 px-2 py-1 rounded-full text-xxs mr-1" v-for="edge in $page.projectTags.edges" :key="edge.node.id"> {{ edge.node.tag_name }} </span>
-            </div>
-          </div>
+          <CustomFooter></CustomFooter>
         </div>
-        <CustomFooter></CustomFooter>
-      </div>
-    </main>
+      </main>
     </NavLayout>
   </SideNavLayout>
 </template>
@@ -65,7 +92,7 @@ export default {
   components: {
     NavLayout,
     SideNavLayout,
-    CustomFooter
+    CustomFooter,
   },
   data() {
     return {
@@ -81,22 +108,19 @@ export default {
           linkText: 'feed',
         },
         linkColor: 'text-brand',
-        iconColor: '#11A89D'
+        iconColor: '#11A89D',
       },
       // unescape: new DOMParser()
     }
   },
   methods: {
     htmlDecode(input) {
-      return unescape(input);
+      return unescape(input)
       // var doc = this.DOMParser.parseFromString(input, "text/html");
       // return doc.documentElement.textContent;
-
-    }
+    },
   },
-  mounted() {
-
-  },
+  mounted() {},
   metaInfo() {
     return {
       title: this.$context.name,
@@ -104,24 +128,24 @@ export default {
         {
           key: 'description',
           name: 'description',
-          content: this.$context.short_description
+          content: this.$context.short_description,
         },
         {
           key: 'og:url',
           name: 'og:url',
-          content: this.$context.project_url
+          content: this.$context.project_url,
         },
         {
           key: 'og:title',
           name: 'og:title',
-          content: this.$context.name
+          content: this.$context.name,
         },
         {
           key: 'og:description',
           name: 'og:description',
-          content: this.$context.short_description
-        }
-      ]
+          content: this.$context.short_description,
+        },
+      ],
     }
   },
 }

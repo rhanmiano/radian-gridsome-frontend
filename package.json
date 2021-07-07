@@ -11,6 +11,7 @@
     "@smartweb/vue-flash-message": "^0.6.2",
     "axios": "^0.21.1",
     "gridsome": "^0.7.0",
+    "gridsome-plugin-modal": "^0.1.1",
     "gsap": "^3.6.0",
     "qs": "^6.9.1",
     "slugify": "^1.4.0",

@@ -1,6 +1,8 @@
 <template>
   <footer class="my-6 text-center text-xs text-brand mt-24">
-    <p> Rhan Miano - Web Developer &copy; 2019 - <span>{{today}}</span> </p>
+    <p class="text-layout-b1 font-medium">
+      Rhan Miano - Web Developer &copy; 2019 - <span>{{ today }}</span>
+    </p>
     <ul class="sitemap">
       <li><g-link to="/">Home</g-link></li>
       <li><g-link to="/about/">About</g-link></li>
@@ -8,7 +10,6 @@
       <li><g-link to="/feed/">Feed</g-link></li>
       <li><g-link to="/contact/">Contact</g-link></li>
     </ul>
-    <g-image class="mx-auto mt-4" src="~/assets/img/positivessl_trust_seal_sm_124x32.png"></g-image>
   </footer>
 </template>
 
@@ -17,17 +18,16 @@ export default {
   name: 'CustomFooter',
   data() {
     return {
-      today: new Date().getFullYear()
+      today: new Date().getFullYear(),
     }
-  }
+  },
 }
 </script>
 
 <style>
 ul.sitemap > li {
   display: inline;
-  margin: 0 .5rem;
+  margin: 0 0.5rem;
   @apply text-xxs;
 }
-
 </style>
