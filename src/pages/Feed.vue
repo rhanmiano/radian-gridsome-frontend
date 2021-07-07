@@ -297,101 +297,105 @@
 
           <CustomFooter></CustomFooter>
         </div>
-        <modal
-          :name="`repo-modal`"
-          :adaptive="true"
-          :width="'500px'"
-          :reset="true"
-          :classes="'github-repo-commits__list w-11/12 md:w-9/12'"
-          @before-close="beforeClose"
-        >
-          <div v-if="activeRepo && activeRepo.node">
-            <div class="repo-meta mb-2">
-              <p class="font-bold">
-                <a
-                  :href="activeRepo.node.url"
-                  target="_blank"
-                  rel="noopener noreferer"
-                  >{{ activeRepo.node.name }}</a
-                >
-              </p>
-              <p>{{ activeRepo.node.description }}</p>
-              <div class="text-xxs text-layout-b2 mt-2">
-                <p>
-                  Created:
-                  {{
-                    new Date(activeRepo.node.createdAt) | dateFormat('MMM YYYY')
-                  }}
+        <ClientOnly>
+          <modal
+            :name="`repo-modal`"
+            :adaptive="true"
+            :width="'500px'"
+            :reset="true"
+            :classes="'github-repo-commits__list w-11/12 md:w-9/12'"
+            @before-close="beforeClose"
+          >
+            <div v-if="activeRepo && activeRepo.node">
+              <div class="repo-meta mb-2">
+                <p class="font-bold">
+                  <a
+                    :href="activeRepo.node.url"
+                    target="_blank"
+                    rel="noopener noreferer"
+                    >{{ activeRepo.node.name }}</a
+                  >
                 </p>
-                <p>
-                  Last Commit:
-                  {{
-                    new Date(activeRepo.node.pushedAt) | dateFormat('MMM YYYY')
-                  }}
-                </p>
-                <p>Forked: {{ activeRepo.node.isFork }}</p>
-              </div>
-            </div>
-            <label
-              for="repo-branch"
-              class="font-avenir-medium py-2 text-xxs font-semibold"
-              >See latest 25 commits on:</label
-            >
-            &nbsp;
-            <select
-              class="px-2 py-1 border rounded focus:outline-none focus:border-brand text-xxs"
-              name="repo-branch"
-              v-model="refBranch"
-            >
-              <option value="0" selected disabled>Select branch</option>
-              <option
-                v-for="ref in activeRepo.node.refs.edges"
-                :value="ref.node.id"
-                :key="ref.node.id"
-                >{{ ref.node.name }}</option
-              >
-            </select>
-            <section class="text-xxs">
-              <ul
-                class="px-1"
-                v-if="
-                  activeBranch &&
-                    activeBranch.length &&
-                    activeBranch[0].node.target.history.edges.length
-                "
-              >
-                <li
-                  class="border-b last:border-b-0 flex py-2 leading-snug text-xxs"
-                  v-for="commit in activeBranch[0].node.target.history.edges"
-                  :key="commit.id"
-                >
-                  <p class="flex-grow">
-                    <span class="text-xxs text-gray-500">
-                      {{
-                        new Date(commit.node.committedDate)
-                          | dateFormat('MMM DD, YYYY')
-                      }}
-                    </span>
-                    <br />
-                    <strong class="text-brand text-xxs font-light">{{
-                      commit.node.message
-                    }}</strong>
+                <p>{{ activeRepo.node.description }}</p>
+                <div class="text-xxs text-layout-b2 mt-2">
+                  <p>
+                    Created:
+                    {{
+                      new Date(activeRepo.node.createdAt)
+                        | dateFormat('MMM YYYY')
+                    }}
                   </p>
-                </li>
-              </ul>
-              <p
-                v-else-if="
-                  activeBranch &&
-                    activeBranch.length &&
-                    activeBranch[0].node.target.history.edges.length == 0
-                "
+                  <p>
+                    Last Commit:
+                    {{
+                      new Date(activeRepo.node.pushedAt)
+                        | dateFormat('MMM YYYY')
+                    }}
+                  </p>
+                  <p>Forked: {{ activeRepo.node.isFork }}</p>
+                </div>
+              </div>
+              <label
+                for="repo-branch"
+                class="font-avenir-medium py-2 text-xxs font-semibold"
+                >See latest 25 commits on:</label
               >
-                No fetched ref history...
-              </p>
-              <p v-else>Select to see commit history...</p>
-            </section>
-          </div>
-        </modal>
+              &nbsp;
+              <select
+                class="px-2 py-1 border rounded focus:outline-none focus:border-brand text-xxs"
+                name="repo-branch"
+                v-model="refBranch"
+              >
+                <option value="0" selected disabled>Select branch</option>
+                <option
+                  v-for="ref in activeRepo.node.refs.edges"
+                  :value="ref.node.id"
+                  :key="ref.node.id"
+                  >{{ ref.node.name }}</option
+                >
+              </select>
+              <section class="text-xxs">
+                <ul
+                  class="px-1"
+                  v-if="
+                    activeBranch &&
+                      activeBranch.length &&
+                      activeBranch[0].node.target.history.edges.length
+                  "
+                >
+                  <li
+                    class="border-b last:border-b-0 flex py-2 leading-snug text-xxs"
+                    v-for="commit in activeBranch[0].node.target.history.edges"
+                    :key="commit.id"
+                  >
+                    <p class="flex-grow">
+                      <span class="text-xxs text-gray-500">
+                        {{
+                          new Date(commit.node.committedDate)
+                            | dateFormat('MMM DD, YYYY')
+                        }}
+                      </span>
+                      <br />
+                      <strong class="text-brand text-xxs font-light">{{
+                        commit.node.message
+                      }}</strong>
+                    </p>
+                  </li>
+                </ul>
+                <p
+                  v-else-if="
+                    activeBranch &&
+                      activeBranch.length &&
+                      activeBranch[0].node.target.history.edges.length == 0
+                  "
+                >
+                  No fetched ref history...
+                </p>
+                <p v-else>Select to see commit history...</p>
+              </section>
+            </div>
+          </modal>
+        </ClientOnly>
       </main>
     </NavLayout>
   </SideNavLayout>
@@ -610,7 +614,7 @@ export default {
 .v--modal-overlay {
   // position: absolute !important;
   @media screen and (min-width: 768px) {
-    @apply h-screen w-9/12;
+    @apply h-screen w-9/12 #{!important};
     margin-left: 25%;
   }
 }

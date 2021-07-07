@@ -9,8 +9,15 @@
 
               <p class="kicker">
                 Previously worked as a
-                <span class="font-medium">Senior Software Engineer</span> for a
-                tech startup in BGC, Taguig. I am
+                <span class="font-medium">Software Engineer</span> for
+                <a
+                  class="external-link"
+                  href="https://cloudpanda.ph/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Cloudpanda PH Inc.</a
+                >
+                in BGC, Taguig. I am
                 <span class="font-medium">currently looking for a role</span>
                 where I can continue my passion for
                 <span class="font-medium">Web Development</span>.
@@ -309,8 +316,8 @@
                     rel="noopener noreferrer"
                     >Nick Romero</a
                   >
-                  — a business colleague friend where I can seek advise, and
-                  share my ideas with.
+                  — a business-minded colleague friend where I can seek advise,
+                  and share my ideas with.
                 </li>
                 <li>
                   <a
