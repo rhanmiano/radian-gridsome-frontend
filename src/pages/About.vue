@@ -15,7 +15,7 @@
                   href="https://cloudpanda.ph/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  >Cloudpanda PH Inc.</a
+                  >Cloud Panda PH Inc.</a
                 >
                 in BGC, Taguig. I am
                 <span class="font-medium">currently looking for a role</span>
