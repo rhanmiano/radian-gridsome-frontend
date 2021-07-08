@@ -3,7 +3,7 @@
     <NavLayout :navInfo="navInfo">
       <main class="">
         <div class="container h-full w-full pt-12 mt-12 md:mt-0">
-          <div class="w-full block px-12">
+          <div class="w-full block px-6 md:px-12">
             <div class="w-full lg:w-9/12">
               <h1 class="decor mt-0">Portfolio</h1>
 

@@ -3,7 +3,7 @@
     <NavLayout :navInfo="navInfo">
       <main class="relative">
         <div class="container h-full w-full pt-12 mt-12 md:mt-0">
-          <div class="w-full block md:flex px-12">
+          <div class="w-full block md:flex px-6 md:px-12">
             <div class="w-full lg:w-9/12 text-layout-b2">
               <h1 class="title decor mt-0">Kumusta!</h1>
 
