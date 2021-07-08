@@ -98,7 +98,7 @@
               ref="soc1"
               title="Download CV"
               class="flex self-center rounded-full w-8 h-8 transition duration-300 ease-out bg-transparent hover:bg-brand-n2 mr-2 md:mx-auto md:mb-2 opacity-50 hover:opacity-100"
-              href="/rhan-cv-march2020.pdf"
+              href="/rhan-cv-july2021.pdf"
               target="_blank"
             >
               <unicon

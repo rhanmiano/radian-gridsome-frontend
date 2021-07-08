@@ -3,7 +3,7 @@
     <NavLayout :navInfo="navInfo">
       <main class="">
         <div class="container h-full w-full pt-12 mt-12 md:mt-0">
-          <div class="w-full block md:flex px-12">
+          <div class="w-full block md:flex px-6 md:px-12">
             <div class="w-full lg:w-9/12">
               <h1 class="decor text-layout-b2 mt-0">Feed</h1>
 

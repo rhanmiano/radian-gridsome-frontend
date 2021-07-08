@@ -18,10 +18,8 @@
         >
           <strong class="project-title font-bold">{{ name }}</strong> <br />
         </div>
-        <div class="sm:flex  flex-grow self-center">
-          <span class="text-xs text-layout-b1 leading-tight">{{
-            short_description
-          }}</span>
+        <div class="sm:flex  flex-grow self-center leading-3">
+          <span class="text-xs text-layout-b1">{{ short_description }}</span>
         </div>
       </div>
       <div class="flex flex-none self-center mr-4">
