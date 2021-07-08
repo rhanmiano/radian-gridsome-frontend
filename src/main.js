@@ -18,7 +18,7 @@ const meta = [
     key: 'description',
     name: 'description',
     content:
-      'I design and develop wonderful experiences on the web. I work as a fulltime Software Engineer. I can do freelance work as well.',
+      'Helps in changing the world by developing wonderful experiences on the web.',
   },
   {
     key: 'keywords',
@@ -39,18 +39,18 @@ const meta = [
   {
     key: 'og:title',
     property: 'og:title',
-    content: 'Rhan Miano — Freelance Web Developer',
+    content: 'Rhan Miano — Full-stack Web Developer from Taguig, PH',
   },
   {
     key: 'og:description',
     property: 'og:description',
     content:
-      'I design and develop wonderful experiences on the web. I work as a fulltime Software Engineer. I can do freelance work as well.',
+      'Helps in changing the world by developing wonderful experiences on the web.',
   },
   {
     key: 'og:site_name',
     property: 'og:site_name',
-    content: 'Rhan Miano — Freelance Web Developer',
+    content: 'Rhan Miano — Full-stack Web Developer from Taguig, PH',
   },
   {
     key: 'og:locale',

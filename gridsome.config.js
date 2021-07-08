@@ -13,10 +13,10 @@ if (process.env.GRIDSOME_ENV === 'production')
   postcssPlugins.push(purgecss(require('./purgecss.config.js')))
 
 module.exports = {
-  siteName: 'Rhan Miano — Freelance Web Developer',
+  siteName: 'Rhan Miano — Full-stack Web Developer from Taguig, PH',
   siteUrl: 'https://rhanmiano.me',
   siteDescription:
-    'I design and develop wonderful experiences on the web. I work as a fulltime Software Engineer. I can do freelance work as well.',
+    'Helps in changing the world by developing wonderful experiences on the web. ',
   metadata: {
     brandColors: {
       brandP2: '#18D3C5',
