@@ -311,7 +311,7 @@
                 <li>
                   <a
                     class="external-link"
-                    href="https://acezoncay.me/Z"
+                    href="https://github.com/boringdeveloper"
                     target="blank"
                     rel="noopener noreferrer"
                     >Nick Romero</a
