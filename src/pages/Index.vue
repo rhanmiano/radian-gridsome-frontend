@@ -79,7 +79,7 @@
             ref="soc1"
             title="Download CV"
             class="social-icons soc1"
-            href="/rhan-cv-march2020.pdf"
+            href="/rhan-cv-july2021.pdf"
             target="_blank"
           >
             <unicon
