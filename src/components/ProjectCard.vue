@@ -12,7 +12,7 @@
           :fill="$static.metadata.brandColors.layoutW1"
         ></unicon>
       </div>
-      <div class="w-full">
+      <div class="w-full self-center">
         <div
           class="self-center text-sm md:text-xs leading-tight font-avenir mb-1"
         >

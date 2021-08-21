@@ -8,19 +8,15 @@
               <h1 class="title decor mt-0">Kumusta!</h1>
 
               <p class="kicker">
-                Previously worked as a
-                <span class="font-medium">Software Engineer</span> for
+                Currently working as a remote
+                <span class="font-medium">Vue Developer</span> for
                 <a
                   class="external-link"
-                  href="https://cloudpanda.ph/"
+                  href="https://inqbyte.io/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  >Cloud Panda PH Inc.</a
+                  >inQbyte</a
                 >
-                in BGC, Taguig. I am
-                <span class="font-medium">currently looking for a role</span>
-                where I can continue my passion for
-                <span class="font-medium">Web Development</span>.
               </p>
 
               <figure class="w-full my-8">
@@ -274,27 +270,72 @@
 
               <h3 class="title decor mt-12">Current Stack</h3>
               <p>
-                There's a plethora of technologies available nowadays. For
-                growing developers like myself, it's overwhelming to choose
-                which languages and/or frameworks should I stick with.
+                On my current job, I am in a team that works on leveraging AI
+                models to help break the job hunting gap between jobseekers and
+                employees. I help in frontend stuff, and I am having a great
+                time learning the
+                <a
+                  class="external-link"
+                  href="https://laravel.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Laravel</a
+                >
+                framework, with
+                <a
+                  class="external-link"
+                  href="https://vuejs.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Vue</a
+                >
+                and
+                <a
+                  class="external-link"
+                  href="https://www.typescriptlang.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Typescript</a
+                >.
               </p>
               <br />
               <p>
-                At work, we used Codeigniter 3 to create custom Web Applications
-                and CMS'es. And gently transitioned to other modern and viable
-                frameworks such as React partnered with Express-GraphQL.
+                Personally, I create projects using
+                <a
+                  class="external-link"
+                  href="https://vuejs.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Vue</a
+                >. I also check other on-top-of-vue related projects out, such
+                as the likes of
+                <a
+                  class="external-link"
+                  href="https://nuxtjs.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Nuxt</a
+                >, and
+                <a
+                  class="external-link"
+                  href="https://gridsome.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Gridsome</a
+                >
+                in which this site is built with. I use
+                <a
+                  class="external-link"
+                  href="https://www.slimframework.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >SlimPHP</a
+                >
+                to power up the back-end side of my personal projects.
               </p>
               <br />
               <p>
-                On a personal preference, I look at Vue as my javascript
-                framework of choice. I also check other on-top-of-vue related
-                projects out, such as the likes of Nuxt, and Gridsome in which
-                this site is built with. I use SlimPHP to power up the back-end
-                side of my personal projects.
-              </p>
-              <br />
-              <p>
-                Currently, I am
+                Right now, I am
                 {{
                   bio.status
                     ? bio.status.message
@@ -397,7 +438,7 @@
                 able to give back to the community.
               </p>
               <br />
-              <p>I also want to travel to "never been to" places soon.</p>
+              <p>Travelling to "never been to" places has been a goal too.</p>
             </div>
             <div class="w-full md:w-3/12"></div>
           </div>
