@@ -2,7 +2,6 @@
 
 @import "./base/normalize";
 @import "./base/reset";
-@import "./base/fonts";
 
 // Liquid Typeset
 $base-size: 16;
@@ -18,7 +17,7 @@ $font-max-size: 20px;
 html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font: normal normal 300 #{$font-base-size} / 1.618em theme('fontFamily.avenir');
+    font: normal normal 400 #{$font-base-size} / 1.618em theme('fontFamily.inria-sans');
 }
 
 // Body base
@@ -30,16 +29,17 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     margin: 1.5rem 0;
-    font-family: theme('fontFamily.avenir-roman');
-    font-weight: 500;
+    font-family: theme('fontFamily.inria-sans');
+    font-weight: 700;
     @apply leading-tight;
     &:not(:first-child) {
         margin: 1.5rem 0;
     }
 
     &.decor {
-        font-family: theme('fontFamily.glegoo-bold');
+        font-family: theme('fontFamily.inria-sans');
         color: theme('colors.layout-b2');
+        // font-weight: 700;
 
         &::after {
             content: "";

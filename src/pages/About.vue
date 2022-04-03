@@ -8,15 +8,15 @@
               <h1 class="title decor mt-0">Kumusta!</h1>
 
               <p class="kicker">
-                Currently working as a remote
-                <span class="font-medium">Vue Developer</span> for
+                I am a <strong>Web Developer</strong> for over four years now and I am living in <strong>Taguig, PH</strong>. As of the moment I am working as a remote
+                <strong>VueJS Developer</strong> for
                 <a
                   class="external-link"
                   href="https://inqbyte.io/"
                   target="_blank"
                   rel="noopener noreferrer"
                   >inQbyte</a
-                >
+                >.
               </p>
 
               <figure class="w-full my-8">
@@ -272,8 +272,7 @@
               <p>
                 On my current job, I am in a team that works on leveraging AI
                 models to help break the job hunting gap between jobseekers and
-                employees. I help in frontend stuff, and I am having a great
-                time learning the
+                employers. I help mostly in creating front-end modules for the project, and I am having a great time learning the
                 <a
                   class="external-link"
                   href="https://laravel.com/"
@@ -300,14 +299,28 @@
               </p>
               <br />
               <p>
-                Personally, I create projects using
+                On my spare time, I create projects using
                 <a
                   class="external-link"
                   href="https://vuejs.org/"
                   target="_blank"
                   rel="noopener noreferrer"
                   >Vue</a
-                >. I also check other on-top-of-vue related projects out, such
+                > and for quite a while now I am learning the ins of 
+                <a
+                  class="external-link"
+                  href="https://reactjs.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >React</a
+                > and 
+                <a
+                  class="external-link"
+                  href="https://reactjs.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >GraphQL</a
+                >. I also check other related projects out, such
                 as the likes of
                 <a
                   class="external-link"
@@ -323,13 +336,19 @@
                   rel="noopener noreferrer"
                   >Gridsome</a
                 >
-                in which this site is built with. I use
+                in which this site is built with. I either use
                 <a
                   class="external-link"
                   href="https://www.slimframework.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                   >SlimPHP</a
+                > or <a
+                  class="external-link"
+                  href="https://lighthouse-php.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Lighthouse PHP</a
                 >
                 to power up the back-end side of my personal projects.
               </p>
@@ -486,7 +505,6 @@ export default {
   },
   async mounted() {
     this.bio = await JSON.parse(sessionStorage.getItem('lsBio'))
-    console.log('bio', this.bio)
   },
 }
 </script>

@@ -23,7 +23,7 @@
                 />
                 <div class="tab-content">
                   <div v-if="currentTab === '1'">
-                    <h4 class="font-glegoo-bold">
+                    <h4 class="font-inria-sans">
                       Repos with most recent updates
                     </h4>
                     <div
@@ -61,7 +61,7 @@
                     </div>
                   </div>
                   <div v-if="currentTab === '2' || currentTab === '3'">
-                    <h4 class="font-glegoo-bold">
+                    <h4 class="font-inria-sans">
                       {{ currentTab === '2' ? 'UI Design' : 'Travel' }}
                     </h4>
                     <figure class="w-full my-8">
@@ -337,7 +337,7 @@
               </div>
               <label
                 for="repo-branch"
-                class="font-avenir-medium py-2 text-xxs font-semibold"
+                class="font-inria-sans py-2 text-xxs font-semibold"
                 >See latest 25 commits on:</label
               >
               &nbsp;

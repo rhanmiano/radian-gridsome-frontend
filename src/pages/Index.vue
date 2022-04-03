@@ -59,7 +59,7 @@
         </figure>
 
         <div class="text-layout-w1 text-center leading-tight">
-          <h1 class="title font-glegoo-bold" ref="title">
+          <h1 class="title font-inria-sans" ref="title">
             Hello! <br class="block md:hidden" />I'm Rhan Miano.
           </h1>
           <h4 class="subtitle" ref="subtitle">
@@ -302,27 +302,10 @@ export default {
 .home-links a {
   margin-right: 1rem;
 }
-
-/* figure.logo, .title, .kicker, .explore, .socWrap, .soc1, .soc2, .soc3{
-  position: relative;
-  opacity: 0;
-}
-.logo {
-  top: -50px;
-}*/
 .title {
-  @apply font-avenir-roman m-0 mb-2;
+  @apply font-inria-sans m-0 mb-2;
 }
 .subtitle {
-  @apply font-avenir font-light m-0 mb-6 text-center;
+  @apply font-inria-sans font-light m-0 mb-6 text-center;
 }
-/*.explore {
-  top: 20px;
-}
-.soc1 {
-  left: 83px;
-}
-.soc3 {
-  left: -83px;
-} */
 </style>

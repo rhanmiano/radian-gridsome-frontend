@@ -14,7 +14,7 @@
       </div>
       <div class="w-full self-center">
         <div
-          class="self-center text-sm md:text-xs leading-tight font-avenir mb-1"
+          class="self-center text-sm md:text-xs leading-tight font-inria-sans mb-1"
         >
           <strong class="project-title font-bold">{{ name }}</strong> <br />
         </div>

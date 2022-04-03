@@ -1,12 +1,13 @@
 // This is the main.js file. Import global CSS and scripts here.
 // The Client API can be used here. Learn more: gridsome.org/docs/client-api
-
-require('./assets/scss/main.scss')
 import VueFilterDateFormat from 'vue-filter-date-format'
 // import vmodal from 'vue-js-modal'
 import vmodal from 'vue-js-modal/dist/ssr.nocss'
 
 import DefaultLayout from '~/App.vue'
+
+require('typeface-inria-sans')
+require('./assets/scss/main.scss')
 
 const meta = [
   {
