@@ -57,10 +57,10 @@
           </g-link>
 
           <div class="hidden md:block text-layout-w1 leading-tight">
-            <h3 class="font-glegoo-bold m-0 mb-2" ref="title">
+            <h3 class="font-inria-sans m-0 mb-2" ref="title">
               Hello! <br class="hidden md:block" />I'm Rhan Miano.
             </h3>
-            <p class="font-avenir text-sm font-light m-0 mb-6" ref="kicker1">
+            <p class="font-inria-sans text-sm font-light m-0 mb-6" ref="kicker1">
               {{ bio.bio }}
             </p>
           </div>
@@ -79,7 +79,7 @@
           </div>
 
           <p
-            class="hidden lg:block font-avenir text-sm font-light m-0 mb-6 leading-tight"
+            class="hidden lg:block font-inria-sans text-sm font-light m-0 mb-6 leading-tight"
             ref="kicker2"
           >
             For freelance work please

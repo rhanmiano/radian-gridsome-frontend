@@ -8,7 +8,7 @@
               <div class="relative py-8">
                 <!-- <div class="absolute w-full "></div> -->
                 <g-image class="" :src="$context.img_url"></g-image>
-                <p class="leading-tight text-xxs font-avenir-medium">
+                <p class="leading-tight text-xxs font-inria-sans">
                   <strong>{{ $context.category.category_name }}</strong> <br />
                   <span class="text-layout-b2"
                     >{{
@@ -19,7 +19,7 @@
 
                   <br />
                 </p>
-                <h1 class="m-0 font-avenir-medium-bold leading-tight">
+                <h1 class="m-0 font-inria-sans leading-tight">
                   {{ $context.name }}
                 </h1>
                 <p class="text-xs font-medium">
@@ -35,7 +35,7 @@
                   >
                 </p>
                 <div
-                  class="text-layout-b2 mt-8 font-light text-justify"
+                  class="text-layout-b2 mt-8 text-justify"
                   id="project-description"
                   v-html="htmlDecode($context.description)"
                 ></div>

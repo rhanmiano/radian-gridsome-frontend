@@ -12,7 +12,7 @@
           </g-link>
         </div>
         <div class="ml-2 flex-grow self-center">
-          <p class="m-0 font-avenir-medium leading-3 font-medium">
+          <p class="m-0 font-inria-sans leading-3 font-medium">
             {{ name }}
           </p>
         </div>

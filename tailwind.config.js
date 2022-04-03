@@ -18,11 +18,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'avenir': ['Avenir', ...defaultTheme.fontFamily.sans],
-        'avenir-roman': ['Avenir Roman', ...defaultTheme.fontFamily.sans],
-        'avenir-medium': ['Avenir Medium', ...defaultTheme.fontFamily.sans],
-        'glegoo': ['Glegoo', ...defaultTheme.fontFamily.serif],
-        'glegoo-bold': ['Glegoo Bold', ...defaultTheme.fontFamily.serif],
+        'inria-sans': ['Inria Sans', ...defaultTheme.fontFamily.sans],
       },
       colors: customColors,
       fontSize: {
