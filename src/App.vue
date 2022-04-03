@@ -11,47 +11,6 @@ export default {
 </script>
 
 <style lang="scss">
-/* @font-face {
-    font-family: 'Inria Serif';
-    src: url('./assets/fonts/InriaSerif-Regular.ttf') format('ttf');
-    font-weight: normal;
-    font-style: normal;
-} 
-
-@font-face {
-    font-family: 'Inria Serif Bold';
-    src: url('./assets/fonts/InriaSerif-Bold.ttf') format('ttf');
-    font-weight: bold;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Avenir';
-    src: url('./assets/fonts/AvenirLTStd-Book.otf') format('otf');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Avenir'; // light
-    src: url('./assets/fonts/AvenirLTStd-Book.otf') format('otf');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Avenir Roman'; // light
-    src: url('./assets/fonts/AvenirLTStd-Roman.otf') format('otf');
-    font-weight: bold;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Avenir Medium'; // light
-    src: url('./assets/fonts/AvenirLTStd-Medium.otf') format('otf');
-    font-weight: bolder;
-    font-style: normal;
-} */
 
 /* Tabs */
 .tab-content {
