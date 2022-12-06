@@ -13,7 +13,7 @@
     "gridsome": "^0.7.0",
     "gridsome-plugin-modal": "^0.1.1",
     "gsap": "^3.6.0",
-    "qs": "^6.9.1",
+    "qs": "^6.9.7",
     "slugify": "^1.4.0",
     "tailwindcss": "^1.2.0",
     "typeface-inria-sans": "^1.1.13",
